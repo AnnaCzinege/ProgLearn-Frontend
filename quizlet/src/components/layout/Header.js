@@ -12,13 +12,16 @@ import {
   StyledLink,
   ToggleBtnContainer,
 } from "../elements/HeaderElements";
+import ToggleBtn from "./ToggleButton";
 
 function ResponsiveHeader() {
   return (
     <StyledHeader>
       <Navbar>
         <Spacer />
-
+        <ToggleBtnContainer>
+          <ToggleBtn />
+        </ToggleBtnContainer>
         <LogoContainer>
           <StyledLink to="/">
             <Logo src={SiteLogo} />

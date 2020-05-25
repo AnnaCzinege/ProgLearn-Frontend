@@ -10,6 +10,7 @@ export const StyledHeader = styled.div`
   width: 100%;
   height: 110px;
   z-index: 5;
+  font-family: "Raleway-Medium";
 `;
 
 export const StyledLink = styled(Link)`

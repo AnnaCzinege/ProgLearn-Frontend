@@ -75,6 +75,11 @@ export const LogoContainer = styled.div`
 
 export const Logo = styled.img`
   align-content: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 `;
 
 export const Spacer = styled.div`

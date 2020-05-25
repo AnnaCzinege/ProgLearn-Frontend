@@ -1,5 +1,5 @@
 import React from "react";
-import SiteLogo from "../../site_logo.png";
+import SiteLogo from "../../puzzle.png";
 import SearchImg from "../../search-icon.png";
 import {
   StyledHeader,

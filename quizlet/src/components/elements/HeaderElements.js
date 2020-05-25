@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHeader = styled.div`
-  background-color: grey;
+  background-color: lightblue;
   /* #306be2 */
   position: fixed;
   top: 0;
@@ -15,9 +15,11 @@ export const StyledHeader = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  color: #306be2;
   &:hover {
-    color: orange;
+    color: #f6a100;
   }
 `;
 

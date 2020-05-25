@@ -10,21 +10,19 @@ import {
   Ul,
   Li,
   StyledLink,
-  ToggleBtnContainer,
 } from "../elements/HeaderElements";
-import ToggleBtn from "./ToggleButton";
 
 function ResponsiveHeader() {
   return (
     <StyledHeader>
       <Navbar>
         <Spacer />
-        <ToggleBtnContainer>
+        {/* <ToggleBtnContainer>
           <ToggleBtn />
-        </ToggleBtnContainer>
+        </ToggleBtnContainer> */}
         <LogoContainer>
           <StyledLink to="/">
-            <Logo src={SiteLogo} />
+            <Logo src={SiteLogo} alt="" />
           </StyledLink>
         </LogoContainer>
         <div>

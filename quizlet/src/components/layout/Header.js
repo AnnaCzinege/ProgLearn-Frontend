@@ -1,5 +1,6 @@
 import React from "react";
 import SiteLogo from "../../site_logo.png";
+import SearchImg from "../../search-icon.png";
 import {
   StyledHeader,
   LogoContainer,
@@ -10,6 +11,10 @@ import {
   Ul,
   Li,
   StyledLink,
+  StyledButton,
+  SearchBar,
+  SearchBox,
+  SearchIcon,
 } from "../elements/HeaderElements";
 
 function ResponsiveHeader() {
@@ -20,21 +25,29 @@ function ResponsiveHeader() {
         {/* <ToggleBtnContainer>
           <ToggleBtn />
         </ToggleBtnContainer> */}
-        <LogoContainer>
-          <StyledLink to="/">
+        <StyledLink to="/">
+          <LogoContainer>
             <Logo src={SiteLogo} alt="" />
-          </StyledLink>
-        </LogoContainer>
+          </LogoContainer>
+        </StyledLink>
         <div>
-          <form></form>
+          <SearchBox>
+            <SearchBar
+              type="text"
+              name="search"
+              placeholder="Search..."
+            ></SearchBar>
+          </SearchBox>
         </div>
+        <Spacer />
+        <Spacer />
         <MenuContainer>
           <Ul>
             <Li>
-              <StyledLink>bDMIPRO</StyledLink>
+              <StyledButton>Log in</StyledButton>
             </Li>
             <Li>
-              <StyledLink>Watchlist</StyledLink>
+              <StyledButton>Sign up</StyledButton>
             </Li>
             <Li></Li>
           </Ul>

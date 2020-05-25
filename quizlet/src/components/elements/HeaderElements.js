@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHeader = styled.div`
-  background-color: lightblue;
+  background-color: darkcyan;
   /* #306be2 */
   position: fixed;
   top: 0;
@@ -15,12 +15,35 @@ export const StyledHeader = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
   color: #306be2;
   &:hover {
     color: #f6a100;
   }
+`;
+
+export const StyledButton = styled.button`
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: whitesmoke;
+  border: solid;
+  border-color: darkcyan;
+  &:hover {
+    color: #f6a100;
+    background: white;
+    border-color: #f6a100;
+    border-radius: 25px;
+  }
+  display: block;
+  justify-content: space-around;
+  background: transparent;
+
+  cursor: pointer;
+  &:active {
+    outline: none;
+  }
+  padding: 5px;
+  box-sizing: border-box;
 `;
 
 export const ToggleBtnContainer = styled.div`
@@ -73,4 +96,29 @@ export const MenuContainer = styled.div`
   @media (max-width: 617px) {
     display: none;
   }
+`;
+
+export const SearchBar = styled.input`
+  width: 250%;
+  height: 30px;
+  padding-left: 5px;
+  background: white;
+  border-radius: 25px;
+  border: 2px solid #f1f3f4;
+  @media (max-width: 925px) {
+    width: 185px;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const SearchIcon = styled.img`
+  float: left;
+`;
+
+export const SearchBox = styled.form`
+  position: relative;
+  display: inline-block;
+  margin-left: 1.5rem;
 `;

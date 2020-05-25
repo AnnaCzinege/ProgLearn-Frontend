@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
+import ResponsiveHeader from "./components/layout/Header";
 
 function App() {
   return (
     <div className="App">
-      <div>Navbar</div>
-      <div>SignUpModal</div>
-      <div>LoginModal</div>
+      <ResponsiveHeader></ResponsiveHeader>
     </div>
   );
 }

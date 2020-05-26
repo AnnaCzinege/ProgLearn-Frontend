@@ -32,11 +32,6 @@ function ResponsiveHeader() {
             <Logo src={SiteLogo} alt="" />
           </LogoContainer>
         </StyledLink>
-        <div style={{ flex: 0.5 }}></div>
-        <ButtonContainer>
-          <TopicButton>Topics</TopicButton>
-        </ButtonContainer>
-
         <div>
           <SearchBox>
             <SearchBar
@@ -47,7 +42,9 @@ function ResponsiveHeader() {
           </SearchBox>
         </div>
         <Spacer />
-        <Spacer />
+        <ButtonContainer>
+          <TopicButton>Topics</TopicButton>
+        </ButtonContainer>
         <MenuContainer>
           <Ul>
             <Li>

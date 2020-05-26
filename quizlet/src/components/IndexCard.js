@@ -3,7 +3,7 @@ import React from "react";
 const IndexCard = () => {
   return (
     <div>
-      <h1>Welcome!</h1>
+      <h1>This is the index page</h1>
     </div>
   );
 };

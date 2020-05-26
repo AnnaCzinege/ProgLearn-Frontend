@@ -42,7 +42,7 @@ export const StyledButton = styled.button`
   &:active {
     outline: none;
   }
-  padding: 5px;
+  padding: 15px;
   box-sizing: border-box;
 `;
 
@@ -147,6 +147,9 @@ export const TopicButton = styled.button`
   text-decoration: underline;
   &:focus {
     outline: none;
+  }
+  &:hover {
+    color: #f6a100;
   }
   cursor: pointer;
 `;

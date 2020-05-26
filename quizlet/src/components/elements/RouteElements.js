@@ -8,7 +8,7 @@ export const indexRoute = (
     path="/"
     render={() => (
       <React.Fragment>
-        <SiteIndex url="/" />
+        <SiteIndex />
       </React.Fragment>
     )}
   />

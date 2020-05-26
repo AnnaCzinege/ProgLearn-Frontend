@@ -8,7 +8,7 @@ export const StyledHeader = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 110px;
+  height: 120px;
   z-index: 5;
   font-family: "Raleway-Medium";
 `;
@@ -70,10 +70,12 @@ export const Navbar = styled.nav`
 
 export const LogoContainer = styled.div`
   padding: 5px;
+  margin-top: 5px;
   align-content: center;
 `;
 
 export const Logo = styled.img`
+  /* resize!!! */
   align-content: center;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -126,4 +128,25 @@ export const SearchBox = styled.form`
   position: relative;
   display: inline-block;
   margin-left: 1.5rem;
+`;
+
+export const ButtonContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const TopicButton = styled.button`
+  color: whitesmoke;
+  font-family: "Raleway-Medium";
+  font-size: bold;
+  border-radius: 25px;
+  padding: 20px;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  &:focus {
+    outline: none;
+  }
+  cursor: pointer;
 `;

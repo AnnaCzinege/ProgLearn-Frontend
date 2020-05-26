@@ -10,6 +10,8 @@ import {
   MenuContainer,
   Ul,
   Li,
+  ButtonContainer,
+  TopicButton,
   StyledLink,
   StyledButton,
   SearchBar,
@@ -30,6 +32,11 @@ function ResponsiveHeader() {
             <Logo src={SiteLogo} alt="" />
           </LogoContainer>
         </StyledLink>
+        <div style={{ flex: 0.5 }}></div>
+        <ButtonContainer>
+          <TopicButton>Topics</TopicButton>
+        </ButtonContainer>
+
         <div>
           <SearchBox>
             <SearchBar

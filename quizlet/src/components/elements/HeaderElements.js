@@ -113,7 +113,7 @@ export const SearchBar = styled.input`
   border-radius: 25px;
   border: 2px solid #f1f3f4;
   @media (max-width: 925px) {
-    width: 185px;
+    max-width: 185px;
   }
   &:focus {
     outline: none;

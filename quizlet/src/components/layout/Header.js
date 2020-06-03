@@ -32,6 +32,7 @@ function ResponsiveHeader() {
             <Logo src={SiteLogo} alt="" />
           </LogoContainer>
         </StyledLink>
+        <Spacer />
         <div>
           <SearchBox>
             <SearchBar
@@ -42,9 +43,7 @@ function ResponsiveHeader() {
           </SearchBox>
         </div>
         <Spacer />
-        <ButtonContainer>
-          <TopicButton>Topics</TopicButton>
-        </ButtonContainer>
+        <Spacer />
         <MenuContainer>
           <Ul>
             <Li>
@@ -56,7 +55,6 @@ function ResponsiveHeader() {
             <Li></Li>
           </Ul>
         </MenuContainer>
-        <Spacer />
       </Navbar>
       <div></div>
       <div></div>

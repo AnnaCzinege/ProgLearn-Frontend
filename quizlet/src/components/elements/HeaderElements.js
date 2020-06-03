@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHeader = styled.div`
-  background-color: darkcyan;
+  background-color: #008080;
   /* #306be2 */
   position: fixed;
   top: 0;
@@ -27,11 +27,11 @@ export const StyledButton = styled.button`
   font-weight: bold;
   color: whitesmoke;
   border: solid;
-  border-color: darkcyan;
+  border-color: #008080;
   &:hover {
     color: #f6a100;
     background: white;
-    border-color: #f6a100;
+    border-color: #ffecc2;
     border-radius: 25px;
   }
   display: block;

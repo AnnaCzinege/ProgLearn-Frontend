@@ -64,19 +64,8 @@ export const Navbar = styled.nav`
   padding: 0 1rem;
 `;
 
-export const LogoContainer = styled.div`
-  padding: 5px;
-  margin-top: 5px;
-  align-content: center;
-`;
-
-export const Logo = styled.img`
-  /* resize!!! */
-  align-content: center;
-`;
-
 export const Spacer = styled.div`
-  flex: 1;
+  flex: 0.5;
 `;
 
 export const Ul = styled.ul`
@@ -94,15 +83,17 @@ export const MenuContainer = styled.div`
   @media (max-width: 617px) {
     display: none;
   }
+  position: relative;
+  display: inline-block;
 `;
 
 export const SearchBar = styled.input`
-  width: 250%;
+  width: 200%;
   height: 30px;
   padding-left: 5px;
   background: white;
   border-radius: 25px;
-  border: 2px solid #f1f3f4;
+  border: 2px solid #45a29e;
   @media (max-width: 925px) {
     max-width: 185px;
   }
@@ -111,36 +102,22 @@ export const SearchBar = styled.input`
   }
 `;
 
-export const SearchIcon = styled.img`
-  float: left;
-`;
-
 export const SearchBox = styled.form`
   position: relative;
   display: inline-block;
-  margin-left: 1.5rem;
+  box-align: center;
 `;
 
 export const ButtonContainer = styled.div`
   position: relative;
   display: inline-block;
+  @media (max-width: 617px) {
+    display: none;
+  }
 `;
 
-export const TopicButton = styled.button`
-  color: whitesmoke;
-  font-family: "Raleway-Medium";
-  font-size: bold;
-  border-radius: 25px;
-  padding: 20px;
-  font-size: 20px;
-  background: transparent;
-  border: none;
-  text-decoration: underline;
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    color: #f6a100;
-  }
-  cursor: pointer;
+export const Container = styled.div`
+  position: relative;
+  display: inline-block;
+  margin: 0 12px;
 `;

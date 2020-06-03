@@ -1,22 +1,17 @@
 import React from "react";
-import SiteLogo from "../../puzzle.png";
-import SearchImg from "../../search-icon.png";
 import {
   StyledHeader,
-  LogoContainer,
   Spacer,
   Navbar,
-  Logo,
   MenuContainer,
   Ul,
   Li,
   ButtonContainer,
-  TopicButton,
   StyledLink,
   StyledButton,
   SearchBar,
   SearchBox,
-  SearchIcon,
+  Container,
 } from "../elements/HeaderElements";
 
 function ResponsiveHeader() {
@@ -26,11 +21,11 @@ function ResponsiveHeader() {
         {/* <ToggleBtnContainer>
           <ToggleBtn />
         </ToggleBtnContainer> */}
-        <div style={{ paddingLeft: "20px" }}>
+        <Container>
           <StyledLink to="/">ProgLearn</StyledLink>
-        </div>
+        </Container>
         <Spacer />
-        <div>
+        <Container>
           <SearchBox>
             <SearchBar
               type="text"
@@ -38,22 +33,24 @@ function ResponsiveHeader() {
               placeholder="Search..."
             ></SearchBar>
           </SearchBox>
-        </div>
+        </Container>
         <Spacer />
         <MenuContainer>
           <Ul>
             <Li>
-              <StyledButton>Log in</StyledButton>
+              <ButtonContainer>
+                <StyledButton>Log in</StyledButton>
+              </ButtonContainer>
             </Li>
             <Li>
-              <StyledButton>Sign up</StyledButton>
+              <ButtonContainer>
+                <StyledButton>Sign up</StyledButton>
+              </ButtonContainer>
             </Li>
             <Li></Li>
           </Ul>
         </MenuContainer>
       </Navbar>
-      <div></div>
-      <div></div>
     </StyledHeader>
   );
 }

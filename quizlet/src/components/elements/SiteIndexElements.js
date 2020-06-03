@@ -64,6 +64,7 @@ export const Card = styled.div`
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
     background-color: whitesmoke;
+    border: 3px solid #45a29e;
   }
 `;
 

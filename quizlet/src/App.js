@@ -12,7 +12,6 @@ function App() {
       <Router>
         <SiteIndexProvider>
           <ResponsiveHeader></ResponsiveHeader>
-
           <div className="App">{indexRoute}</div>
         </SiteIndexProvider>
       </Router>

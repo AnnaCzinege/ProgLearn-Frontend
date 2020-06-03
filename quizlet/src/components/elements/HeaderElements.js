@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHeader = styled.div`
-  background-color: #008080;
+  background-color: #0b0c10;
   /* #306be2 */
+  /* #4abdac */
   position: fixed;
   top: 0;
   left: 0;
@@ -15,10 +16,9 @@ export const StyledHeader = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #306be2;
-  &:hover {
-    color: #f6a100;
-  }
+  color: #66fcf1;
+  font-size: 22px;
+  font-family: "Raleway-Medium";
 `;
 
 export const StyledButton = styled.button`
@@ -27,21 +27,17 @@ export const StyledButton = styled.button`
   font-weight: bold;
   color: whitesmoke;
   border: solid;
-  border-color: #008080;
+  border-color: #66fcf1;
+  border-radius: 0.25rem;
+  outline: none;
   &:hover {
-    color: #f6a100;
-    background: white;
-    border-color: #ffecc2;
-    border-radius: 25px;
+    color: #1f2833;
+    background: #66fcf1;
   }
   display: block;
   justify-content: space-around;
   background: transparent;
-
   cursor: pointer;
-  &:active {
-    outline: none;
-  }
   padding: 15px;
   box-sizing: border-box;
 `;
@@ -77,11 +73,6 @@ export const LogoContainer = styled.div`
 export const Logo = styled.img`
   /* resize!!! */
   align-content: center;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
 `;
 
 export const Spacer = styled.div`

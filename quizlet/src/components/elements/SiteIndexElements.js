@@ -6,11 +6,12 @@ export const StyledTitle = styled.h1`
   font-size: 32px;
   font-weight: bold;
   font-family: "Raleway-Medium";
-  color: whitesmoke;
+  color: #66fcf1;
 `;
 
 export const StyledTopicLink = styled.a`
   align-items: center;
+  z-index: 2;
   display: inline-block;
   background-color: transparent;
   border: none;
@@ -33,7 +34,7 @@ export const CardTitle = styled.h4`
   font-weight: bold;
   font-size: 20px;
   padding-top: 10px;
-  color: #008080;
+  color: #45a29e;
 `;
 
 export const CardImg = styled.div`
@@ -48,7 +49,7 @@ export const CardImg = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: #ffecc2;
+  background-color: #c5c6c7;
   align-items: center;
   vertical-align: center;
   text-align: center;
@@ -62,6 +63,7 @@ export const Card = styled.div`
   box-sizing: inherit;
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+    background-color: whitesmoke;
   }
 `;
 

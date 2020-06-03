@@ -23,15 +23,12 @@ function ResponsiveHeader() {
   return (
     <StyledHeader>
       <Navbar>
-        <Spacer />
         {/* <ToggleBtnContainer>
           <ToggleBtn />
         </ToggleBtnContainer> */}
-        <StyledLink to="/">
-          <LogoContainer>
-            <Logo src={SiteLogo} alt="" />
-          </LogoContainer>
-        </StyledLink>
+        <div style={{ paddingLeft: "20px" }}>
+          <StyledLink to="/">ProgLearn</StyledLink>
+        </div>
         <Spacer />
         <div>
           <SearchBox>
@@ -42,7 +39,6 @@ function ResponsiveHeader() {
             ></SearchBar>
           </SearchBox>
         </div>
-        <Spacer />
         <Spacer />
         <MenuContainer>
           <Ul>

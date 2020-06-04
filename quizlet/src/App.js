@@ -5,14 +5,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { indexRoute } from "./components/elements/RouteElements";
 import { AppContainer } from "./components/elements/AppContainerElements";
 import { SiteIndexProvider } from "./components/contexts/SiteIndexContext";
+import { QuestionProvider } from "./components/contexts/QuestionContext";
 
 function App() {
   return (
     <AppContainer>
       <Router>
         <SiteIndexProvider>
-          <ResponsiveHeader></ResponsiveHeader>
-          <div className="App">{indexRoute}</div>
+          <QuestionProvider>
+            <ResponsiveHeader></ResponsiveHeader>
+            <div className="App">{indexRoute}</div>
+          </QuestionProvider>
         </SiteIndexProvider>
       </Router>
     </AppContainer>

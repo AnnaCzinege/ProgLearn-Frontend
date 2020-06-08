@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Container,
   StyledTitle,
@@ -11,9 +11,11 @@ import {
   StyledParagraph,
 } from "./elements/LearningModeElements";
 import { StyledSection, CardContainer } from "./elements/SiteIndexElements";
+import { QuizContext } from "./contexts/QuizContext";
 
 const LearningMode = (props) => {
   const urlString = props.location.pathname;
+  const { setDifficulty, setMode, setNumber } = useContext(QuizContext);
 
   const getTopicName = (string) => {
     let n = string.lastIndexOf("/");
@@ -43,36 +45,42 @@ const LearningMode = (props) => {
     setEasy({ checked: event.target.checked });
     setMedium({ checked: false });
     setHard({ checked: false });
+    setDifficulty("easy");
   };
 
   const handleCheckboxChange2 = (event) => {
     setMedium({ checked: event.target.checked });
     setEasy({ checked: false });
     setHard({ checked: false });
+    setDifficulty("medium");
   };
 
   const handleCheckboxChange3 = (event) => {
     setHard({ checked: event.target.checked });
     setMedium({ checked: false });
     setEasy({ checked: false });
+    setDifficulty("hard");
   };
 
   const handleCheckboxChange4 = (event) => {
     setTen({ checked: event.target.checked });
     setThirty({ checked: false });
     setFifty({ checked: false });
+    setNumber(10);
   };
 
   const handleCheckboxChange5 = (event) => {
     setThirty({ checked: event.target.checked });
     setTen({ checked: false });
     setFifty({ checked: false });
+    setNumber(30);
   };
 
   const handleCheckboxChange6 = (event) => {
     setFifty({ checked: event.target.checked });
     setThirty({ checked: false });
     setTen({ checked: false });
+    setNumber(50);
   };
 
   const RadioButton = ({ checked, ...props }) => {

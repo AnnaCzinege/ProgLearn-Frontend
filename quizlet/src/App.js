@@ -9,6 +9,7 @@ import {
 import { AppContainer } from "./components/elements/AppContainerElements";
 import { SiteIndexProvider } from "./components/contexts/SiteIndexContext";
 import { QuestionProvider } from "./components/contexts/QuestionContext";
+import { QuizProvider } from "./components/contexts/QuizContext";
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
       <Router>
         <SiteIndexProvider>
           <QuestionProvider>
-            <ResponsiveHeader></ResponsiveHeader>
-            <div className="App">{indexRoute}</div>
-            <div className="App">{generalKnowledgeRoute}</div>
+            <QuizProvider>
+              <ResponsiveHeader></ResponsiveHeader>
+              <div className="App">{indexRoute}</div>
+              <div className="App">{generalKnowledgeRoute}</div>
+            </QuizProvider>
           </QuestionProvider>
         </SiteIndexProvider>
       </Router>

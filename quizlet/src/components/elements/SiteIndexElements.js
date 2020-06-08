@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledTitle = styled.h1`
   text-align: center;
@@ -9,7 +10,7 @@ export const StyledTitle = styled.h1`
   color: #66fcf1;
 `;
 
-export const StyledTopicLink = styled.a`
+export const StyledTopicLink = styled(Link)`
   align-items: center;
   z-index: 2;
   display: inline-block;

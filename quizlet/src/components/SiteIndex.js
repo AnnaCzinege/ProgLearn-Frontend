@@ -22,21 +22,13 @@ const SiteIndex = () => {
       <CardSection>
         <StyledTitle>Welcome!</StyledTitle>
         <CardContainer>
-          <StyledTopicLink href="topic/general-knowledge">
+          <StyledTopicLink
+            to={{
+              pathname: `/topic/general-knowledge`,
+            }}
+          >
             <Card>
               <CardTitle>General knowledge</CardTitle>
-              <CardImg />
-            </Card>
-          </StyledTopicLink>
-          <StyledTopicLink href="topic/languages">
-            <Card>
-              <CardTitle>Data structures & Algorithms</CardTitle>
-              <CardImg />
-            </Card>
-          </StyledTopicLink>
-          <StyledTopicLink href="topic/languages">
-            <Card>
-              <CardTitle>Data structures & Algorithms</CardTitle>
               <CardImg />
             </Card>
           </StyledTopicLink>

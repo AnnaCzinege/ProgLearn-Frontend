@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import {
   StyledTitle,
   StyledTopicLink,
@@ -11,55 +11,36 @@ import {
 import { QuestionContext } from "./contexts/QuestionContext";
 
 const SiteIndex = () => {
-  const { easyGeneral, fetchEasyGeneral } = useContext(QuestionContext);
+  const { easyGeneral } = useContext(QuestionContext);
 
   const questions = easyGeneral.map((item) => {
     return <div>{item.question}</div>;
   });
 
-  useEffect(() => {
-    fetchEasyGeneral();
-  }, []);
-
   return (
     <div className="area">
-      <ul className="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
       <CardSection>
-        <CardSection>
-          <StyledTitle>Welcome!</StyledTitle>
-          <CardContainer>
-            <StyledTopicLink href="topic/general-knowledge">
-              <Card>
-                <CardTitle>General knowledge</CardTitle>
-                <CardImg />
-              </Card>
-            </StyledTopicLink>
-            <StyledTopicLink href="topic/languages">
-              <Card>
-                <CardTitle>Data structures & Algorithms</CardTitle>
-                <CardImg />
-              </Card>
-            </StyledTopicLink>
-            <StyledTopicLink href="topic/languages">
-              <Card>
-                <CardTitle>Data structures & Algorithms</CardTitle>
-                <CardImg />
-              </Card>
-            </StyledTopicLink>
-          </CardContainer>
-        </CardSection>
-        <p>{questions}</p>
+        <StyledTitle>Welcome!</StyledTitle>
+        <CardContainer>
+          <StyledTopicLink href="topic/general-knowledge">
+            <Card>
+              <CardTitle>General knowledge</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
+          <StyledTopicLink href="topic/languages">
+            <Card>
+              <CardTitle>Data structures & Algorithms</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
+          <StyledTopicLink href="topic/languages">
+            <Card>
+              <CardTitle>Data structures & Algorithms</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
+        </CardContainer>
       </CardSection>
     </div>
   );

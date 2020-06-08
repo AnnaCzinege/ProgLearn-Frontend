@@ -6,7 +6,15 @@ export const StyledTitle = styled.p`
   font-size: 32px;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
-  color: whitesmoke;
+  color: #45a29e;
+`;
+
+export const StyledParagraph = styled.p`
+  text-align: left;
+  padding: 10px;
+  font-size: 22px;
+  font-family: "Raleway-Regular";
+  color: #c5c6c7;
 `;
 
 export const Container = styled.div`
@@ -20,9 +28,10 @@ export const Container = styled.div`
 
 export const StyledUl = styled.ul`
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 30px;
+  padding: 0 30px;
   overflow: auto;
+  justify-content: flex-start;
 `;
 
 export const StyledLi = styled.li`

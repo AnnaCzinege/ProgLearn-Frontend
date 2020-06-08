@@ -8,7 +8,9 @@ import {
   StyledLabel,
   StyledRadioButton,
   RadioButtonContainer,
+  StyledParagraph,
 } from "./elements/LearningModeElements";
+import { StyledSection, CardContainer } from "./elements/SiteIndexElements";
 
 const LearningMode = (props) => {
   const urlString = props.location.pathname;
@@ -33,6 +35,9 @@ const LearningMode = (props) => {
   const [easy, setEasy] = useState({ checked: false });
   const [medium, setMedium] = useState({ checked: false });
   const [hard, setHard] = useState({ checked: false });
+  const [ten, setTen] = useState({ checked: false });
+  const [thirty, setThirty] = useState({ checked: false });
+  const [fifty, setFifty] = useState({ checked: false });
 
   const handleCheckboxChange1 = (event) => {
     setEasy({ checked: event.target.checked });
@@ -52,6 +57,24 @@ const LearningMode = (props) => {
     setEasy({ checked: false });
   };
 
+  const handleCheckboxChange4 = (event) => {
+    setTen({ checked: event.target.checked });
+    setThirty({ checked: false });
+    setFifty({ checked: false });
+  };
+
+  const handleCheckboxChange5 = (event) => {
+    setThirty({ checked: event.target.checked });
+    setTen({ checked: false });
+    setFifty({ checked: false });
+  };
+
+  const handleCheckboxChange6 = (event) => {
+    setFifty({ checked: event.target.checked });
+    setThirty({ checked: false });
+    setTen({ checked: false });
+  };
+
   const RadioButton = ({ checked, ...props }) => {
     return (
       <RadioButtonContainer>
@@ -62,44 +85,77 @@ const LearningMode = (props) => {
   };
 
   return (
-    <div>
+    <StyledSection>
       <StyledTitle>{title(getTopicName(urlString))}</StyledTitle>
       <form>
         <Container>
-          <h2>Select Difficulty:</h2>
-          <StyledUl>
-            <StyledLi>
-              <HiddenRadioButton />
-              <StyledLabel checked={easy.checked}>
-                Easy
-                <RadioButton
-                  checked={easy.checked}
-                  onChange={handleCheckboxChange1}
-                />
-              </StyledLabel>
-            </StyledLi>
-            <StyledLi>
-              <StyledLabel checked={medium.checked}>
-                Medium
-                <RadioButton
-                  checked={medium.checked}
-                  onChange={handleCheckboxChange2}
-                />
-              </StyledLabel>
-            </StyledLi>
-            <StyledLi>
-              <StyledLabel checked={hard.checked}>
-                Hard
-                <RadioButton
-                  checked={hard.checked}
-                  onChange={handleCheckboxChange3}
-                />
-              </StyledLabel>
-            </StyledLi>
-          </StyledUl>
+          <CardContainer>
+            <StyledUl>
+              <StyledParagraph>Select Difficulty:</StyledParagraph>
+              <StyledLi>
+                <HiddenRadioButton />
+                <StyledLabel checked={easy.checked}>
+                  Easy
+                  <RadioButton
+                    checked={easy.checked}
+                    onChange={handleCheckboxChange1}
+                  />
+                </StyledLabel>
+              </StyledLi>
+              <StyledLi>
+                <StyledLabel checked={medium.checked}>
+                  Medium
+                  <RadioButton
+                    checked={medium.checked}
+                    onChange={handleCheckboxChange2}
+                  />
+                </StyledLabel>
+              </StyledLi>
+              <StyledLi>
+                <StyledLabel checked={hard.checked}>
+                  Hard
+                  <RadioButton
+                    checked={hard.checked}
+                    onChange={handleCheckboxChange3}
+                  />
+                </StyledLabel>
+              </StyledLi>
+            </StyledUl>
+            <StyledUl>
+              <StyledParagraph>Number of Questions:</StyledParagraph>
+              <StyledLi>
+                <HiddenRadioButton />
+                <StyledLabel checked={ten.checked}>
+                  10
+                  <RadioButton
+                    checked={ten.checked}
+                    onChange={handleCheckboxChange4}
+                  />
+                </StyledLabel>
+              </StyledLi>
+              <StyledLi>
+                <StyledLabel checked={thirty.checked}>
+                  30
+                  <RadioButton
+                    checked={thirty.checked}
+                    onChange={handleCheckboxChange5}
+                  />
+                </StyledLabel>
+              </StyledLi>
+              <StyledLi>
+                <StyledLabel checked={fifty.checked}>
+                  50
+                  <RadioButton
+                    checked={fifty.checked}
+                    onChange={handleCheckboxChange6}
+                  />
+                </StyledLabel>
+              </StyledLi>
+            </StyledUl>
+          </CardContainer>
         </Container>
       </form>
-    </div>
+    </StyledSection>
   );
 };
 

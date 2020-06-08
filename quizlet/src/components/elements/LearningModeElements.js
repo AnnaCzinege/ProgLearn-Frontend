@@ -38,6 +38,12 @@ export const StyledLi = styled.li`
 export const HiddenRadioButton = styled.input.attrs({ type: "radio" })`
   position: absolute;
   visibility: hidden;
+  border: 0;
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  width: 1px;
 `;
 
 export const StyledRadioButton = styled.div`

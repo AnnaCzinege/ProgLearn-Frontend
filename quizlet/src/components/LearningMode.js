@@ -9,7 +9,6 @@ import {
   StyledRadioButton,
   RadioButtonContainer,
 } from "./elements/LearningModeElements";
-import ExampleApp from "./Checkbox";
 
 const LearningMode = (props) => {
   const urlString = props.location.pathname;
@@ -31,10 +30,26 @@ const LearningMode = (props) => {
     return array.join(" ");
   };
 
-  const [state, setState] = useState({ checked: false });
+  const [easy, setEasy] = useState({ checked: false });
+  const [medium, setMedium] = useState({ checked: false });
+  const [hard, setHard] = useState({ checked: false });
 
-  const handleCheckboxChange = (event) => {
-    setState({ checked: event.target.checked });
+  const handleCheckboxChange1 = (event) => {
+    setEasy({ checked: event.target.checked });
+    setMedium({ checked: false });
+    setHard({ checked: false });
+  };
+
+  const handleCheckboxChange2 = (event) => {
+    setMedium({ checked: event.target.checked });
+    setEasy({ checked: false });
+    setHard({ checked: false });
+  };
+
+  const handleCheckboxChange3 = (event) => {
+    setHard({ checked: event.target.checked });
+    setMedium({ checked: false });
+    setEasy({ checked: false });
   };
 
   const RadioButton = ({ checked, ...props }) => {
@@ -55,30 +70,29 @@ const LearningMode = (props) => {
           <StyledUl>
             <StyledLi>
               <HiddenRadioButton />
-              <StyledLabel checked={state.checked}>
+              <StyledLabel checked={easy.checked}>
                 Easy
                 <RadioButton
-                  checked={state.checked}
-                  onChange={handleCheckboxChange}
+                  checked={easy.checked}
+                  onChange={handleCheckboxChange1}
                 />
               </StyledLabel>
             </StyledLi>
             <StyledLi>
-              <StyledLabel checked={state.checked}>
+              <StyledLabel checked={medium.checked}>
                 Medium
                 <RadioButton
-                  checked={state.checked}
-                  onChange={handleCheckboxChange}
+                  checked={medium.checked}
+                  onChange={handleCheckboxChange2}
                 />
               </StyledLabel>
-              <HiddenRadioButton type="radio" name="selector" />
             </StyledLi>
             <StyledLi>
-              <StyledLabel checked={state.checked}>
+              <StyledLabel checked={hard.checked}>
                 Hard
                 <RadioButton
-                  checked={state.checked}
-                  onChange={handleCheckboxChange}
+                  checked={hard.checked}
+                  onChange={handleCheckboxChange3}
                 />
               </StyledLabel>
             </StyledLi>

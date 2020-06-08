@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-export const StyledTitle = styled.h1`
+export const StyledTitle = styled.p`
   text-align: center;
   margin-top: 150px;
   font-size: 32px;
-  font-weight: bold;
-  font-family: "Raleway-Medium";
+  font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
-  color: #66fcf1;
+  color: whitesmoke;
 `;
 
 export const Container = styled.div`
@@ -36,60 +35,53 @@ export const StyledLi = styled.li`
   border-bottom: 1px solid #333;
 `;
 
-export const StyledInput = styled.input`
+export const HiddenRadioButton = styled.input.attrs({ type: "radio" })`
   position: absolute;
   visibility: hidden;
 `;
 
-export const StyledLabel = styled.label`
-  display: block;
-  position: relative;
-  font-weight: 300;
-  font-size: 1.35em;
-  padding: 25px 25px 25px 80px;
-  margin: 10px auto;
-  height: 30px;
-  z-index: 9;
-  cursor: pointer;
-  transition: all 0.25s linear;
-  &:hover {
-    color: #ffffff;
-  }
-  &:checked {
-    color: #0dff92;
-  }
-`;
-
-export const Check = styled.div`
+export const StyledRadioButton = styled.div`
   display: block;
   position: absolute;
-  border: 5px solid #aaaaaa;
+  border: 3px solid #aaaaaa;
+  border-color: ${(props) => (props.checked ? "#66fcf1" : "#aaaaaa")};
   border-radius: 100%;
-  height: 25px;
-  width: 25px;
+  height: 15px;
+  width: 15px;
   top: 30px;
-  left: 20px;
+  left: 30px;
   z-index: 5;
   transition: border 0.25s linear;
-  -webkit-transition: border 0.25s linear;
-  &:hover {
-    border: 5px solid #ffffff;
-  }
   &::before {
     display: block;
     position: absolute;
     content: "";
     border-radius: 100%;
-    height: 15px;
-    width: 15px;
-    top: 5px;
-    left: 5px;
+    height: 9px;
+    width: 9px;
+    top: 3.3px;
+    left: 3.3px;
     margin: auto;
-    &:checked {
-      background: #0dff92;
-    }
+    background: ${(props) => (props.checked ? "#66fcf1" : "")};
   }
-  &:checked {
-    border: 5px solid #0dff92;
-  }
+`;
+
+export const RadioButtonContainer = styled.div`
+  display: inline-block;
+  vertical-align: middle;
+`;
+
+export const StyledLabel = styled.label`
+  text-align: left;
+  display: block;
+  position: relative;
+  font-weight: ${(props) => (props.checked ? "400" : "200")};
+  font-size: 1.35em;
+  padding: 25px 25px 25px 80px;
+  margin: 10px auto;
+  height: 30px;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 0.25s linear;
+  color: ${(props) => (props.checked ? "#66fcf1" : "#aaaaaa")};
 `;

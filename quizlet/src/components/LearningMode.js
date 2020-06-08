@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   StyledTitle,
   StyledLi,
   StyledUl,
-  StyledInput,
+  HiddenRadioButton,
   StyledLabel,
-  Check,
+  StyledRadioButton,
+  RadioButtonContainer,
 } from "./elements/LearningModeElements";
+import ExampleApp from "./Checkbox";
 
 const LearningMode = (props) => {
   const urlString = props.location.pathname;
-  const difficulty = ["easy", "medium", "hard"];
-  const numbers = [10, 30, 50];
 
   const getTopicName = (string) => {
     let n = string.lastIndexOf("/");
@@ -31,13 +31,20 @@ const LearningMode = (props) => {
     return array.join(" ");
   };
 
-  const difficultyList = difficulty.map((item) => {
-    return <option value={item}>{item}</option>;
-  });
+  const [state, setState] = useState({ checked: false });
 
-  const numberOfquestions = numbers.map((item) => {
-    return <option value={item}>{item}</option>;
-  });
+  const handleCheckboxChange = (event) => {
+    setState({ checked: event.target.checked });
+  };
+
+  const RadioButton = ({ checked, ...props }) => {
+    return (
+      <RadioButtonContainer>
+        <HiddenRadioButton checked={checked} {...props} />
+        <StyledRadioButton checked={checked} />
+      </RadioButtonContainer>
+    );
+  };
 
   return (
     <div>
@@ -47,60 +54,36 @@ const LearningMode = (props) => {
           <h2>Select Difficulty:</h2>
           <StyledUl>
             <StyledLi>
-              <StyledInput type="radio" name="selector" />
-              <StyledLabel>Easy</StyledLabel>
-              <Check></Check>
+              <HiddenRadioButton />
+              <StyledLabel checked={state.checked}>
+                Easy
+                <RadioButton
+                  checked={state.checked}
+                  onChange={handleCheckboxChange}
+                />
+              </StyledLabel>
             </StyledLi>
             <StyledLi>
-              <StyledInput type="radio" name="selector" />
-              <StyledLabel>Medium</StyledLabel>
-
-              <Check>
-                <div className="inside"></div>
-              </Check>
+              <StyledLabel checked={state.checked}>
+                Medium
+                <RadioButton
+                  checked={state.checked}
+                  onChange={handleCheckboxChange}
+                />
+              </StyledLabel>
+              <HiddenRadioButton type="radio" name="selector" />
             </StyledLi>
             <StyledLi>
-              <StyledInput type="radio" name="selector" />
-              <StyledLabel>Hard</StyledLabel>
-
-              <Check>
-                <div className="inside"></div>
-              </Check>
+              <StyledLabel checked={state.checked}>
+                Hard
+                <RadioButton
+                  checked={state.checked}
+                  onChange={handleCheckboxChange}
+                />
+              </StyledLabel>
             </StyledLi>
           </StyledUl>
         </Container>
-      </form>
-      <form>
-        <div className="container">
-          <h2>Your favorite thing in the world:</h2>
-
-          <ul>
-            <li>
-              <input type="radio" id="f-option" name="selector" />
-              <label>Pizza</label>
-
-              <div className="check"></div>
-            </li>
-
-            <li>
-              <input type="radio" id="s-option" name="selector" />
-              <label>Bacon</label>
-
-              <div className="check">
-                <div className="inside"></div>
-              </div>
-            </li>
-
-            <li>
-              <input type="radio" id="t-option" name="selector" />
-              <label>Cats</label>
-
-              <div className="check">
-                <div className="inside"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
       </form>
     </div>
   );

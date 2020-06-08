@@ -34,12 +34,15 @@ export const CardTitle = styled.h4`
   font-family: "Raleway-Medium";
   font-weight: bold;
   font-size: 20px;
-  padding-top: 10px;
+  padding-top: 30px;
   color: #45a29e;
+  &:hover {
+    color: #1f2833;
+  }
 `;
 
 export const CardImg = styled.div`
-  background-image: url(https://cdn4.iconfinder.com/data/icons/basic-ui-element-2-3-filled-outline/512/Basic_UI_Elements_-_2.3_-_Filled_Outline_-_44-11-512.png);
+  background-image: ur();
   background-position: 100%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -50,7 +53,7 @@ export const CardImg = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: #c5c6c7;
+  background-color: whitesmoke;
   align-items: center;
   vertical-align: center;
   text-align: center;
@@ -62,10 +65,10 @@ export const Card = styled.div`
   transition: all 0.12s;
   justify-content: flex-start;
   box-sizing: inherit;
+  border: 5px solid #45a29e;
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
-    background-color: whitesmoke;
-    border: 3px solid #45a29e;
+    border: 5px solid whitesmoke;
   }
 `;
 

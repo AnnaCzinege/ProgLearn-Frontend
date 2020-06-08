@@ -9,6 +9,7 @@ import {
   CardSection,
 } from "./elements/SiteIndexElements";
 import { QuestionContext } from "./contexts/QuestionContext";
+import { Bubbles } from "./contexts/SiteIndexContext";
 
 const SiteIndex = () => {
   const { easyGeneral } = useContext(QuestionContext);
@@ -20,8 +21,59 @@ const SiteIndex = () => {
   return (
     <div className="area">
       <CardSection>
+        <Bubbles />
         <StyledTitle>Welcome!</StyledTitle>
         <CardContainer>
+          <StyledTopicLink
+            to={{
+              pathname: `/topic/general-knowledge`,
+            }}
+          >
+            <Card>
+              <CardTitle>General knowledge</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
+          <StyledTopicLink
+            to={{
+              pathname: `/topic/general-knowledge`,
+            }}
+          >
+            <Card>
+              <CardTitle>General knowledge</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
+          <StyledTopicLink
+            to={{
+              pathname: `/topic/general-knowledge`,
+            }}
+          >
+            <Card>
+              <CardTitle>General knowledge</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
+          <StyledTopicLink
+            to={{
+              pathname: `/topic/general-knowledge`,
+            }}
+          >
+            <Card>
+              <CardTitle>General knowledge</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
+          <StyledTopicLink
+            to={{
+              pathname: `/topic/general-knowledge`,
+            }}
+          >
+            <Card>
+              <CardTitle>General knowledge</CardTitle>
+              <CardImg />
+            </Card>
+          </StyledTopicLink>
           <StyledTopicLink
             to={{
               pathname: `/topic/general-knowledge`,

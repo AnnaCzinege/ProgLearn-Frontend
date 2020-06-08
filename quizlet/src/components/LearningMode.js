@@ -12,6 +12,7 @@ import {
 } from "./elements/LearningModeElements";
 import { StyledSection, CardContainer } from "./elements/SiteIndexElements";
 import { QuizContext } from "./contexts/QuizContext";
+import { Bubbles } from "./contexts/SiteIndexContext";
 
 const LearningMode = (props) => {
   const urlString = props.location.pathname;
@@ -95,6 +96,7 @@ const LearningMode = (props) => {
   return (
     <StyledSection>
       <StyledTitle>{title(getTopicName(urlString))}</StyledTitle>
+      <Bubbles />
       <form>
         <Container>
           <CardContainer>

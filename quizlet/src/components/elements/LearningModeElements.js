@@ -90,7 +90,7 @@ export const StyledLabel = styled.label`
   text-align: left;
   display: block;
   position: relative;
-  font-weight: ${(props) => (props.checked ? "400" : "300")};
+  font-weight: ${(props) => (props.checked ? "400" : "400")};
   font-size: 1.35em;
   padding: 25px 25px 25px 80px;
   margin: 10px auto;

@@ -6,8 +6,9 @@ export const StyledTitle = styled.h1`
   margin-top: 150px;
   font-size: 32px;
   font-weight: bold;
-  font-family: "Raleway-Medium";
-  color: #66fcf1;
+  font-family: "Raleway-Regular";
+  letter-spacing: 1.5px;
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "#66fcf1")};
 `;
 
 export const StyledTopicLink = styled(Link)`
@@ -31,14 +32,10 @@ export const StyledTopicLink = styled(Link)`
 `;
 
 export const CardTitle = styled.h4`
-  font-family: "Raleway-Medium";
-  font-weight: bold;
+  font-family: "Raleway-Regular";
   font-size: 20px;
   padding-top: 30px;
   color: #45a29e;
-  &:hover {
-    color: #1f2833;
-  }
 `;
 
 export const CardImg = styled.div`
@@ -53,7 +50,7 @@ export const CardImg = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: whitesmoke;
+  background-color: transparent;
   align-items: center;
   vertical-align: center;
   text-align: center;
@@ -65,10 +62,11 @@ export const Card = styled.div`
   transition: all 0.12s;
   justify-content: flex-start;
   box-sizing: inherit;
-  border: 5px solid #45a29e;
+  border: 5px solid #c5c6c7;
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
-    border: 5px solid whitesmoke;
+    border: 5px solid #45a29e;
+    background: whitesmoke;
   }
 `;
 
@@ -89,4 +87,14 @@ export const CardSection = styled.div`
 
 export const StyledSection = styled.div`
   display: block;
+`;
+
+export const Section = styled.div`
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: ${(props) => props.currentTheme};
 `;

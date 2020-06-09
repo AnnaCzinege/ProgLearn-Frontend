@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledTitle = styled.p`
   text-align: center;
@@ -7,6 +8,7 @@ export const StyledTitle = styled.p`
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
   color: #45a29e;
+  /* #45a29e */
 `;
 
 export const StyledParagraph = styled.p`
@@ -14,7 +16,8 @@ export const StyledParagraph = styled.p`
   padding: 10px;
   font-size: 22px;
   font-family: "Raleway-Regular";
-  color: #c5c6c7;
+  color: whitesmoke;
+  /* #c5c6c7 */
 `;
 
 export const Container = styled.div`
@@ -79,6 +82,17 @@ export const StyledRadioButton = styled.div`
     margin: auto;
     background: ${(props) => (props.checked ? "#66fcf1" : "")};
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #1f2833;
+  border: 3px solid #66fcf1;
+  padding: 20px;
+  border-radius: 0.25rem;
+  font-size: 22px;
+  background-color: #66fcf1;
+  font-family: "Raleway-Regular";
 `;
 
 export const RadioButtonContainer = styled.div`

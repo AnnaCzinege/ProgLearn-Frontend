@@ -9,6 +9,7 @@ import {
   StyledRadioButton,
   RadioButtonContainer,
   StyledParagraph,
+  StyledLink,
 } from "./elements/LearningModeElements";
 import { StyledSection, CardContainer } from "./elements/SiteIndexElements";
 import { QuizContext } from "./contexts/QuizContext";
@@ -131,6 +132,8 @@ const LearningMode = (props) => {
                 </StyledLabel>
               </StyledLi>
             </StyledUl>
+          </CardContainer>
+          <CardContainer>
             <StyledUl>
               <StyledParagraph>Number of Questions:</StyledParagraph>
               <StyledLi>
@@ -165,6 +168,13 @@ const LearningMode = (props) => {
           </CardContainer>
         </Container>
       </form>
+      <StyledLink
+        to={{
+          pathname: `/topic/general-knowledge`,
+        }}
+      >
+        Let's Start!
+      </StyledLink>
     </StyledSection>
   );
 };

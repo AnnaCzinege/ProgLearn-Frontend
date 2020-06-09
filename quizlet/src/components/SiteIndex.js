@@ -7,22 +7,21 @@ import {
   CardTitle,
   CardImg,
   CardSection,
+  Section,
 } from "./elements/SiteIndexElements";
 import { QuestionContext } from "./contexts/QuestionContext";
+import { ThemeContext } from "./contexts/ThemeContext";
 import { Bubbles } from "./contexts/SiteIndexContext";
+import AppTheme from "./Colors";
 
 const SiteIndex = () => {
-  const { easyGeneral } = useContext(QuestionContext);
-
-  const questions = easyGeneral.map((item) => {
-    return <div>{item.question}</div>;
-  });
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
 
   return (
-    <div className="area">
+    <Section currentTheme={currentTheme}>
       <CardSection>
-        <Bubbles />
-        <StyledTitle>Welcome!</StyledTitle>
+        <StyledTitle theme={theme}>Welcome!</StyledTitle>
         <CardContainer>
           <StyledTopicLink
             to={{
@@ -86,7 +85,7 @@ const SiteIndex = () => {
           </StyledTopicLink>
         </CardContainer>
       </CardSection>
-    </div>
+    </Section>
   );
 };
 

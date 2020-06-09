@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHeader = styled.div`
-  background-color: #0b0c10;
+  background-color: ${(props) =>
+    props.theme === "light" ? "#45a29e" : "#0b0c10"};
   /* #306be2 */
   /* #4abdac */
   position: fixed;
@@ -11,12 +12,14 @@ export const StyledHeader = styled.div`
   width: 100%;
   height: 120px;
   z-index: 10;
+  border-bottom: 1px solid
+    ${(props) => (props.theme === "light" ? "#45a29e" : "#c5c6c7")};
   font-family: "Raleway-Regular";
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #66fcf1;
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "#66fcf1")};
   font-size: 22px;
   font-family: "Raleway-Medium";
 `;
@@ -25,14 +28,16 @@ export const StyledButton = styled.button`
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-  color: whitesmoke;
+  color: ${(props) => (props.theme === "light" ? "whitesmoke" : "#66fcf1")};
   border: solid;
-  border-color: #66fcf1;
+  border-color: ${(props) =>
+    props.theme === "light" ? "whitesmoke" : "#66fcf1"};
   border-radius: 0.25rem;
   outline: none;
   &:hover {
-    color: #1f2833;
-    background: #66fcf1;
+    color: ${(props) => (props.theme === "light" ? "#45a29e" : "#1f2833")};
+    background: ${(props) =>
+      props.theme === "light" ? "whitesmoke" : "#66fcf1"};
   }
   display: block;
   justify-content: space-around;

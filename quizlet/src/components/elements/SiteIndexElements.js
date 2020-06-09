@@ -8,7 +8,7 @@ export const StyledTitle = styled.h1`
   font-weight: bold;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
-  color: ${(props) => (props.theme === "light" ? "#1f2833" : "#66fcf1")};
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "whitesmoke")};
 `;
 
 export const StyledTopicLink = styled(Link)`
@@ -35,7 +35,7 @@ export const CardTitle = styled.h4`
   font-family: "Raleway-Regular";
   font-size: 20px;
   padding-top: 30px;
-  color: #45a29e;
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "#45a29e")};
 `;
 
 export const CardImg = styled.div`

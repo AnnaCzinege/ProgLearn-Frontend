@@ -15,19 +15,22 @@ import {
 } from "../elements/HeaderElements";
 import ThemeToggler from "../ThemeToggler";
 import { ThemeContext } from "../contexts/ThemeContext";
+import AppTheme from "../Colors";
 
 function ResponsiveHeader() {
   const theme = useContext(ThemeContext)[0];
   const currentTheme = AppTheme[theme];
 
   return (
-    <StyledHeader>
+    <StyledHeader theme={theme}>
       <Navbar>
         {/* <ToggleBtnContainer>
           <ToggleBtn />
         </ToggleBtnContainer> */}
         <Container>
-          <StyledLink to="/">ProgLearn</StyledLink>
+          <StyledLink to="/" theme={theme}>
+            ProgLearn
+          </StyledLink>
         </Container>
         <Spacer />
         <ThemeToggler />
@@ -45,12 +48,12 @@ function ResponsiveHeader() {
           <Ul>
             <Li>
               <ButtonContainer>
-                <StyledButton>Log in</StyledButton>
+                <StyledButton theme={theme}>Log in</StyledButton>
               </ButtonContainer>
             </Li>
             <Li>
               <ButtonContainer>
-                <StyledButton>Sign up</StyledButton>
+                <StyledButton theme={theme}>Sign up</StyledButton>
               </ButtonContainer>
             </Li>
             <Li></Li>

@@ -29,7 +29,7 @@ const SiteIndex = () => {
             }}
           >
             <Card>
-              <CardTitle>General knowledge</CardTitle>
+              <CardTitle theme={theme}>General knowledge</CardTitle>
               <CardImg />
             </Card>
           </StyledTopicLink>
@@ -39,7 +39,7 @@ const SiteIndex = () => {
             }}
           >
             <Card>
-              <CardTitle>General knowledge</CardTitle>
+              <CardTitle theme={theme}>General knowledge</CardTitle>
               <CardImg />
             </Card>
           </StyledTopicLink>
@@ -49,7 +49,7 @@ const SiteIndex = () => {
             }}
           >
             <Card>
-              <CardTitle>General knowledge</CardTitle>
+              <CardTitle theme={theme}>General knowledge</CardTitle>
               <CardImg />
             </Card>
           </StyledTopicLink>
@@ -59,7 +59,7 @@ const SiteIndex = () => {
             }}
           >
             <Card>
-              <CardTitle>General knowledge</CardTitle>
+              <CardTitle theme={theme}>General knowledge</CardTitle>
               <CardImg />
             </Card>
           </StyledTopicLink>
@@ -69,7 +69,7 @@ const SiteIndex = () => {
             }}
           >
             <Card>
-              <CardTitle>General knowledge</CardTitle>
+              <CardTitle theme={theme}>General knowledge</CardTitle>
               <CardImg />
             </Card>
           </StyledTopicLink>
@@ -79,7 +79,7 @@ const SiteIndex = () => {
             }}
           >
             <Card>
-              <CardTitle>General knowledge</CardTitle>
+              <CardTitle theme={theme}>General knowledge</CardTitle>
               <CardImg />
             </Card>
           </StyledTopicLink>

@@ -9,9 +9,7 @@ import {
   CardSection,
   Section,
 } from "./elements/SiteIndexElements";
-import { QuestionContext } from "./contexts/QuestionContext";
 import { ThemeContext } from "./contexts/ThemeContext";
-import { Bubbles } from "./contexts/SiteIndexContext";
 import AppTheme from "./Colors";
 
 const SiteIndex = () => {

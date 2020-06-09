@@ -13,11 +13,14 @@ import {
 } from "./elements/LearningModeElements";
 import { StyledSection, CardContainer } from "./elements/SiteIndexElements";
 import { QuizContext } from "./contexts/QuizContext";
-import { Bubbles } from "./contexts/SiteIndexContext";
+import { ThemeContext } from "./contexts/ThemeContext";
+import AppTheme from "./Colors";
 
 const LearningMode = (props) => {
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
+
   const urlString = props.location.pathname;
-  const { setDifficulty, setMode, setNumber } = useContext(QuizContext);
 
   const getTopicName = (string) => {
     let n = string.lastIndexOf("/");
@@ -42,6 +45,8 @@ const LearningMode = (props) => {
   const [ten, setTen] = useState({ checked: false });
   const [thirty, setThirty] = useState({ checked: false });
   const [fifty, setFifty] = useState({ checked: false });
+
+  const { setDifficulty, setMode, setNumber } = useContext(QuizContext);
 
   const handleCheckboxChange1 = (event) => {
     setEasy({ checked: event.target.checked });
@@ -95,9 +100,8 @@ const LearningMode = (props) => {
   };
 
   return (
-    <StyledSection>
+    <StyledSection currentTheme={currentTheme}>
       <StyledTitle>{title(getTopicName(urlString))}</StyledTitle>
-      <Bubbles />
       <form>
         <Container>
           <CardContainer>
@@ -132,8 +136,6 @@ const LearningMode = (props) => {
                 </StyledLabel>
               </StyledLi>
             </StyledUl>
-          </CardContainer>
-          <CardContainer>
             <StyledUl>
               <StyledParagraph>Number of Questions:</StyledParagraph>
               <StyledLi>
@@ -166,6 +168,7 @@ const LearningMode = (props) => {
               </StyledLi>
             </StyledUl>
           </CardContainer>
+          <CardContainer></CardContainer>
         </Container>
       </form>
       <StyledLink

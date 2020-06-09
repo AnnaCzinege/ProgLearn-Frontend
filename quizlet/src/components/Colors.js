@@ -1,5 +1,3 @@
-import React from "react";
-
 const AppTheme = {
   light: {
     textColor: "#0b0c10",

@@ -15,11 +15,11 @@ import {
 } from "../elements/HeaderElements";
 import ThemeToggler from "../ThemeToggler";
 import { ThemeContext } from "../contexts/ThemeContext";
-import AppTheme from "../Colors";
+//import AppTheme from "../Colors";
 
 function ResponsiveHeader() {
   const theme = useContext(ThemeContext)[0];
-  const currentTheme = AppTheme[theme];
+  //const currentTheme = AppTheme[theme];
 
   return (
     <StyledHeader theme={theme}>

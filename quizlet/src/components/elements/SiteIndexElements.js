@@ -87,6 +87,13 @@ export const CardSection = styled.div`
 
 export const StyledSection = styled.div`
   display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  height: 100%;
+  background-color: ${(props) => props.currentTheme};
 `;
 
 export const Section = styled.div`

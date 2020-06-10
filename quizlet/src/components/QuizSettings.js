@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   Container,
   StyledTitle,
@@ -13,6 +13,7 @@ import {
 } from "./elements/QuizSettingsElements";
 import { StyledSection, CardContainer } from "./elements/SiteIndexElements";
 import { QuizContext } from "./contexts/QuizContext";
+import { QuestionContext } from "./contexts/QuestionContext";
 import { ThemeContext } from "./contexts/ThemeContext";
 import AppTheme from "./Colors";
 
@@ -20,12 +21,25 @@ const LearningMode = (props) => {
   const theme = useContext(ThemeContext)[0];
   const currentTheme = AppTheme[theme];
 
+  const {
+    difficulty,
+    number,
+    setDifficulty,
+    topic,
+    setTopic,
+    setNumber,
+  } = useContext(QuizContext);
+
+  const { allQuestions, setSelectedQuestions } = useContext(QuestionContext);
+
   const urlString = props.location.pathname;
+  const [category, setCategory] = useState("");
 
   const getTopicName = (string) => {
     let n = string.lastIndexOf("/");
-    let topic = string.substring(n + 1);
-    return topic.replace(/-/g, " ");
+    let topicName = string.substring(n + 1);
+    topicName = topicName.replace(/-/g, " ");
+    return topicName;
   };
 
   const title = (string) => {
@@ -33,8 +47,8 @@ const LearningMode = (props) => {
     for (let i = 0; i < array.length; i++) {
       array[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1);
     }
-
-    return array.join(" ");
+    let result = array.join(" ");
+    return result;
   };
 
   const [easy, setEasy] = useState({ checked: false });
@@ -43,15 +57,6 @@ const LearningMode = (props) => {
   const [ten, setTen] = useState({ checked: false });
   const [thirty, setThirty] = useState({ checked: false });
   const [fifty, setFifty] = useState({ checked: false });
-
-  const {
-    difficulty,
-    mode,
-    number,
-    setDifficulty,
-    setMode,
-    setNumber,
-  } = useContext(QuizContext);
 
   const handleCheckboxChange1 = (event) => {
     setEasy({ checked: event.target.checked });
@@ -104,9 +109,33 @@ const LearningMode = (props) => {
     );
   };
 
+  const selectQuestions = () => {
+    let questions = [];
+    let counter = 0;
+    for (let item of allQuestions) {
+      if (
+        item["category"] === topic &&
+        item["difficulty"] === difficulty &&
+        counter < number
+      ) {
+        questions.push(item);
+        counter++;
+      }
+    }
+    for (let item of questions) {
+      setSelectedQuestions((prev) => [...prev, item]);
+    }
+  };
+
+  useEffect(() => {
+    let topicName = title(getTopicName(urlString));
+    setCategory(topicName);
+    setTopic(topicName);
+  }, [setTopic, urlString]);
+
   return (
     <StyledSection currentTheme={currentTheme}>
-      <StyledTitle theme={theme}>{title(getTopicName(urlString))}</StyledTitle>
+      <StyledTitle theme={theme}>{category}</StyledTitle>
       <form>
         <Container>
           <CardContainer>
@@ -183,8 +212,9 @@ const LearningMode = (props) => {
       <StyledLink
         theme={theme}
         to={{
-          pathname: `/quiz/${urlString}/${difficulty}/${number}`,
+          pathname: `/quiz${urlString}/${difficulty}/${number}`,
         }}
+        onClick={selectQuestions}
       >
         Let's Start!
       </StyledLink>

@@ -4,9 +4,8 @@ import Axios from "axios";
 export const QuestionContext = createContext();
 
 export const QuestionProvider = (props) => {
-  const [easyGeneral, setEasyGeneral] = useState([]);
-  const [mediumGeneral, setMediumGeneral] = useState([]);
-  const [hardGeneral, setHardGeneral] = useState([]);
+  const [allQuestions, setAllquestions] = useState([]);
+  const [selectedQuestions, setSelectedQuestions] = useState([]);
 
   const convert = (string) => {
     return string.replace(/&#(?:x([\da-f]+)|(\d+));/gi, function (_, hex, dec) {
@@ -24,54 +23,29 @@ export const QuestionProvider = (props) => {
     return string;
   };
 
-  const fetchEasyGeneral = useCallback(() => {
-    Axios.get(
-      "https://opentdb.com/api.php?amount=50&category=9&difficulty=easy&type=multiple"
-    ).then((resp) => {
-      let array = resp.data.results;
-      for (let item of array) {
-        item.question = convert(item.question);
-        item.question = convertOtherSymbols(item.question);
-        setEasyGeneral((prevData) => [...prevData, item]);
-      }
-    });
-  }, []);
-
-  const fetchMediumGeneral = useCallback(() => {
-    Axios.get(
-      "https://opentdb.com/api.php?amount=50&category=9&difficulty=medium&type=multiple"
-    ).then((resp) => {
-      let array = resp.data.results;
-      for (let item of array) {
-        item.question = convert(item.question);
-        item.question = convertOtherSymbols(item.question);
-        setMediumGeneral((prevData) => [...prevData, item]);
-      }
-    });
-  }, []);
-
-  const fetchHardGeneral = useCallback(() => {
-    Axios.get(
-      "https://opentdb.com/api.php?amount=50&category=9&difficulty=hard&type=multiple"
-    ).then((resp) => {
-      let array = resp.data.results;
-      for (let item of array) {
-        item.question = convert(item.question);
-        item.question = convertOtherSymbols(item.question);
-        setHardGeneral((prevData) => [...prevData, item]);
-      }
-    });
+  const fetchGeneralQuestions = useCallback(() => {
+    let array = ["easy", "medium", "hard"];
+    for (let item of array) {
+      Axios.get(
+        `https://opentdb.com/api.php?amount=50&category=9&difficulty=${item}&type=multiple`
+      ).then((resp) => {
+        let array = resp.data.results;
+        for (let item of array) {
+          item.question = convert(item.question);
+          item.question = convertOtherSymbols(item.question);
+          setAllquestions((prevData) => [...prevData, item]);
+        }
+      });
+    }
   }, []);
 
   useEffect(() => {
-    fetchEasyGeneral();
-    fetchMediumGeneral();
-    fetchHardGeneral();
-  }, [fetchEasyGeneral, fetchMediumGeneral, fetchHardGeneral]);
+    fetchGeneralQuestions();
+  }, [fetchGeneralQuestions]);
 
   return (
     <QuestionContext.Provider
-      value={{ easyGeneral, mediumGeneral, hardGeneral }}
+      value={{ allQuestions, selectedQuestions, setSelectedQuestions }}
     >
       {props.children}
     </QuestionContext.Provider>

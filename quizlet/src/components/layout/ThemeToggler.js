@@ -1,10 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-import {
-  StyledLabel,
-  StyledInput,
-  StyledSpan,
-} from "../elements/ThemeTogglerElements";
+import { StyledLabel, StyledSpan } from "../elements/ThemeTogglerElements";
 
 const ThemeToggler = () => {
   const [themeMode, setThemeMode] = useContext(ThemeContext);

@@ -5,10 +5,10 @@ export const QuizContext = createContext();
 export const QuizProvider = (props) => {
   const [difficulty, setDifficulty] = useState("easy");
   const [number, setNumber] = useState(10);
-  const [mode, setMode] = useState("multiple choice");
+  const [topic, setTopic] = useState("general knowledge");
   return (
     <QuizContext.Provider
-      value={{ difficulty, number, mode, setDifficulty, setNumber, setMode }}
+      value={{ difficulty, number, topic, setDifficulty, setNumber, setTopic }}
     >
       {props.children}
     </QuizContext.Provider>

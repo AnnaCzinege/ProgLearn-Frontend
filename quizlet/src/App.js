@@ -21,14 +21,14 @@ function App() {
         <ThemeProvider>
           <SiteIndexProvider>
             <QuestionProvider>
-              <QuizProvider>
-                <SettingProvider>
+              <SettingProvider>
+                <QuizProvider>
                   <ResponsiveHeader></ResponsiveHeader>
                   <div className="App">{indexRoute}</div>
                   <div className="App">{topicRoute}</div>
                   <div className="App">{quizRoute}</div>
-                </SettingProvider>
-              </QuizProvider>
+                </QuizProvider>
+              </SettingProvider>
             </QuestionProvider>
           </SiteIndexProvider>
         </ThemeProvider>

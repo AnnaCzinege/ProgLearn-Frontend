@@ -16,7 +16,7 @@ export const StyledParagraph = styled.p`
   padding: 10px;
   font-size: 22px;
   font-family: "Raleway-Regular";
-  color: whitesmoke;
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "whitesmoke")};
   /* #c5c6c7 */
 `;
 
@@ -62,7 +62,12 @@ export const StyledRadioButton = styled.div`
   display: block;
   position: absolute;
   border: 3px solid #aaaaaa;
-  border-color: ${(props) => (props.checked ? "#66fcf1" : "#aaaaaa")};
+  border-color: ${(props) =>
+    props.checked && props.theme === "dark"
+      ? "#66fcf1"
+      : props.checked && props.theme === "light"
+      ? "#0b0c10"
+      : "#aaaaaa"};
   border-radius: 100%;
   height: 15px;
   width: 15px;
@@ -80,7 +85,12 @@ export const StyledRadioButton = styled.div`
     top: 3.3px;
     left: 3.3px;
     margin: auto;
-    background: ${(props) => (props.checked ? "#66fcf1" : "")};
+    background: ${(props) =>
+      props.checked && props.theme === "dark"
+        ? "#66fcf1"
+        : props.checked && props.theme === "light"
+        ? "#0b0c10"
+        : ""};
   }
 `;
 
@@ -104,7 +114,7 @@ export const StyledLabel = styled.label`
   text-align: left;
   display: block;
   position: relative;
-  font-weight: ${(props) => (props.checked ? "400" : "400")};
+  font-weight: 400;
   font-size: 1.35em;
   padding: 25px 25px 25px 80px;
   margin: 10px auto;
@@ -112,5 +122,10 @@ export const StyledLabel = styled.label`
   z-index: 5;
   cursor: pointer;
   transition: all 0.25s linear;
-  color: ${(props) => (props.checked ? "#66fcf1" : "#aaaaaa")};
+  color: ${(props) =>
+    props.checked && props.theme === "dark"
+      ? "#66fcf1"
+      : props.checked && props.theme === "light"
+      ? "#0b0c10"
+      : "#aaaaaa"};
 `;

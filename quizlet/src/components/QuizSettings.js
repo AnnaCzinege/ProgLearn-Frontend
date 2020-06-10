@@ -10,7 +10,7 @@ import {
   RadioButtonContainer,
   StyledParagraph,
   StyledLink,
-} from "./elements/LearningModeElements";
+} from "./elements/QuizSettingsElements";
 import { StyledSection, CardContainer } from "./elements/SiteIndexElements";
 import { QuizContext } from "./contexts/QuizContext";
 import { ThemeContext } from "./contexts/ThemeContext";
@@ -30,10 +30,8 @@ const LearningMode = (props) => {
 
   const title = (string) => {
     let array = string.split(" ");
-    console.log(array);
     for (let i = 0; i < array.length; i++) {
       array[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1);
-      console.log(array[i]);
     }
 
     return array.join(" ");
@@ -46,7 +44,14 @@ const LearningMode = (props) => {
   const [thirty, setThirty] = useState({ checked: false });
   const [fifty, setFifty] = useState({ checked: false });
 
-  const { setDifficulty, setMode, setNumber } = useContext(QuizContext);
+  const {
+    difficulty,
+    mode,
+    number,
+    setDifficulty,
+    setMode,
+    setNumber,
+  } = useContext(QuizContext);
 
   const handleCheckboxChange1 = (event) => {
     setEasy({ checked: event.target.checked });
@@ -94,7 +99,7 @@ const LearningMode = (props) => {
     return (
       <RadioButtonContainer>
         <HiddenRadioButton checked={checked} {...props} />
-        <StyledRadioButton checked={checked} />
+        <StyledRadioButton checked={checked} theme={theme} />
       </RadioButtonContainer>
     );
   };
@@ -106,10 +111,12 @@ const LearningMode = (props) => {
         <Container>
           <CardContainer>
             <StyledUl>
-              <StyledParagraph>Select Difficulty:</StyledParagraph>
+              <StyledParagraph theme={theme}>
+                Select Difficulty:
+              </StyledParagraph>
               <StyledLi>
                 <HiddenRadioButton />
-                <StyledLabel checked={easy.checked}>
+                <StyledLabel checked={easy.checked} theme={theme}>
                   Easy
                   <RadioButton
                     checked={easy.checked}
@@ -118,7 +125,7 @@ const LearningMode = (props) => {
                 </StyledLabel>
               </StyledLi>
               <StyledLi>
-                <StyledLabel checked={medium.checked}>
+                <StyledLabel checked={medium.checked} theme={theme}>
                   Medium
                   <RadioButton
                     checked={medium.checked}
@@ -127,7 +134,7 @@ const LearningMode = (props) => {
                 </StyledLabel>
               </StyledLi>
               <StyledLi>
-                <StyledLabel checked={hard.checked}>
+                <StyledLabel checked={hard.checked} theme={theme}>
                   Hard
                   <RadioButton
                     checked={hard.checked}
@@ -137,10 +144,12 @@ const LearningMode = (props) => {
               </StyledLi>
             </StyledUl>
             <StyledUl>
-              <StyledParagraph>Number of Questions:</StyledParagraph>
+              <StyledParagraph theme={theme}>
+                Number of Questions:
+              </StyledParagraph>
               <StyledLi>
                 <HiddenRadioButton />
-                <StyledLabel checked={ten.checked}>
+                <StyledLabel checked={ten.checked} theme={theme}>
                   10
                   <RadioButton
                     checked={ten.checked}
@@ -149,7 +158,7 @@ const LearningMode = (props) => {
                 </StyledLabel>
               </StyledLi>
               <StyledLi>
-                <StyledLabel checked={thirty.checked}>
+                <StyledLabel checked={thirty.checked} theme={theme}>
                   30
                   <RadioButton
                     checked={thirty.checked}
@@ -158,7 +167,7 @@ const LearningMode = (props) => {
                 </StyledLabel>
               </StyledLi>
               <StyledLi>
-                <StyledLabel checked={fifty.checked}>
+                <StyledLabel checked={fifty.checked} theme={theme}>
                   50
                   <RadioButton
                     checked={fifty.checked}
@@ -173,7 +182,7 @@ const LearningMode = (props) => {
       </form>
       <StyledLink
         to={{
-          pathname: `/topic/general-knowledge`,
+          pathname: `/quiz/${urlString}/${difficulty}/${number}`,
         }}
       >
         Let's Start!

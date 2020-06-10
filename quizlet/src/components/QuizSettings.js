@@ -106,7 +106,7 @@ const LearningMode = (props) => {
 
   return (
     <StyledSection currentTheme={currentTheme}>
-      <StyledTitle>{title(getTopicName(urlString))}</StyledTitle>
+      <StyledTitle theme={theme}>{title(getTopicName(urlString))}</StyledTitle>
       <form>
         <Container>
           <CardContainer>
@@ -181,6 +181,7 @@ const LearningMode = (props) => {
         </Container>
       </form>
       <StyledLink
+        theme={theme}
         to={{
           pathname: `/quiz/${urlString}/${difficulty}/${number}`,
         }}

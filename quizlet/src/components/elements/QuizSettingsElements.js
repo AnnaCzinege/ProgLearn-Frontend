@@ -7,7 +7,7 @@ export const StyledTitle = styled.p`
   font-size: 32px;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
-  color: #45a29e;
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "whitesmoke")};
   /* #45a29e */
 `;
 
@@ -66,7 +66,7 @@ export const StyledRadioButton = styled.div`
     props.checked && props.theme === "dark"
       ? "#66fcf1"
       : props.checked && props.theme === "light"
-      ? "#0b0c10"
+      ? "#ffae6d"
       : "#aaaaaa"};
   border-radius: 100%;
   height: 15px;
@@ -89,19 +89,21 @@ export const StyledRadioButton = styled.div`
       props.checked && props.theme === "dark"
         ? "#66fcf1"
         : props.checked && props.theme === "light"
-        ? "#0b0c10"
+        ? "#ffae6d"
         : ""};
   }
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #1f2833;
-  border: 3px solid #66fcf1;
+  color: ${(props) => (props.theme === "dark" ? "#1f2833" : "whitesmoke")};
+  border: 3px solid
+    ${(props) => (props.theme === "dark" ? "#66fcf1" : "#ffae6d")};
   padding: 20px;
   border-radius: 0.25rem;
   font-size: 22px;
-  background-color: #66fcf1;
+  background-color: ${(props) =>
+    props.theme === "dark" ? "#66fcf1" : "#ffae6d"};
   font-family: "Raleway-Regular";
 `;
 
@@ -126,6 +128,6 @@ export const StyledLabel = styled.label`
     props.checked && props.theme === "dark"
       ? "#66fcf1"
       : props.checked && props.theme === "light"
-      ? "#0b0c10"
+      ? "#ffae6d"
       : "#aaaaaa"};
 `;

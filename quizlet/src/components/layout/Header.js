@@ -13,7 +13,7 @@ import {
   SearchBox,
   Container,
 } from "../elements/HeaderElements";
-import ThemeToggler from "../ThemeToggler";
+import ThemeToggler from "./ThemeToggler";
 import { ThemeContext } from "../contexts/ThemeContext";
 //import AppTheme from "../Colors";
 
@@ -28,13 +28,17 @@ function ResponsiveHeader() {
           <ToggleBtn />
         </ToggleBtnContainer> */}
         <Container>
+          <ThemeToggler />
+        </Container>
+
+        <Container>
           <StyledLink to="/" theme={theme}>
             ProgLearn
           </StyledLink>
         </Container>
         <Spacer />
-        <ThemeToggler />
-        <Container>
+        <Spacer />
+        {/* <Container>
           <SearchBox>
             <SearchBar
               type="text"
@@ -42,8 +46,7 @@ function ResponsiveHeader() {
               placeholder="Search..."
             ></SearchBar>
           </SearchBox>
-        </Container>
-        <Spacer />
+        </Container> */}
         <MenuContainer>
           <Ul>
             <Li>

@@ -1,21 +1,22 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "./contexts/ThemeContext";
-
-const themeTogglerStyle = {
-  cursor: "pointer",
-};
+import { ThemeContext } from "../contexts/ThemeContext";
+import {
+  StyledLabel,
+  StyledInput,
+  StyledSpan,
+} from "../elements/ThemeTogglerElements";
 
 const ThemeToggler = () => {
   const [themeMode, setThemeMode] = useContext(ThemeContext);
+
   return (
-    <div
-      style={themeTogglerStyle}
+    <StyledLabel
       onClick={() => {
         setThemeMode(themeMode === "light" ? "dark" : "light");
       }}
     >
-      <span title="switch theme">{themeMode === "light" ? "🌙" : "☀️"}</span>
-    </div>
+      <StyledSpan title="switch theme" theme={themeMode} />
+    </StyledLabel>
   );
 };
 

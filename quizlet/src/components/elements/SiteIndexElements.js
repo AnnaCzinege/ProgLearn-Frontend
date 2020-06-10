@@ -8,7 +8,7 @@ export const StyledTitle = styled.h1`
   font-weight: bold;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
-  color: ${(props) => (props.theme === "light" ? "#1f2833" : "whitesmoke")};
+  color: ${(props) => (props.theme === "light" ? "#ffae6d" : "#ffae6d")};
 `;
 
 export const StyledTopicLink = styled(Link)`
@@ -50,7 +50,8 @@ export const CardImg = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: transparent;
+  background-color: ${(props) =>
+    props.theme === "light" ? "#f9f9f9" : "#0b0c10"};
   align-items: center;
   vertical-align: center;
   text-align: center;
@@ -62,11 +63,11 @@ export const Card = styled.div`
   transition: all 0.12s;
   justify-content: flex-start;
   box-sizing: inherit;
-  border: 5px solid #ffae6d;
+  border: 5px solid #45a29e;
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
-    border: 5px solid #45a29e;
-    background: whitesmoke;
+    border: 5px solid #ffae6d;
+    background: #f9f9f9;
   }
 `;
 

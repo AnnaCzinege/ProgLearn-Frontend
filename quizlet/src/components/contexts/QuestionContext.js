@@ -6,6 +6,7 @@ export const QuestionContext = createContext();
 export const QuestionProvider = (props) => {
   const [allQuestions, setAllquestions] = useState([]);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
+  const array = ["easy", "medium", "hard"];
 
   const convert = (string) => {
     return string.replace(/&#(?:x([\da-f]+)|(\d+));/gi, function (_, hex, dec) {
@@ -24,7 +25,6 @@ export const QuestionProvider = (props) => {
   };
 
   const fetchGeneralQuestions = useCallback(() => {
-    let array = ["easy", "medium", "hard"];
     for (let item of array) {
       Axios.get(
         `https://opentdb.com/api.php?amount=50&category=9&difficulty=${item}&type=multiple`
@@ -37,10 +37,90 @@ export const QuestionProvider = (props) => {
         }
       });
     }
-  }, []);
+  }, [array]);
+
+  const fetchScienceNatureQuestions = useCallback(() => {
+    for (let item of array) {
+      Axios.get(
+        `https://opentdb.com/api.php?amount=50&category=17&difficulty=${item}&type=multiple`
+      ).then((resp) => {
+        let array = resp.data.results;
+        for (let item of array) {
+          item.question = convert(item.question);
+          item.question = convertOtherSymbols(item.question);
+          setAllquestions((prevData) => [...prevData, item]);
+        }
+      });
+    }
+  }, [array]);
+
+  const fetchMythologyQuestions = useCallback(() => {
+    for (let item of array) {
+      Axios.get(
+        `https://opentdb.com/api.php?amount=50&category=20&difficulty=${item}&type=multiple`
+      ).then((resp) => {
+        let array = resp.data.results;
+        for (let item of array) {
+          item.question = convert(item.question);
+          item.question = convertOtherSymbols(item.question);
+          setAllquestions((prevData) => [...prevData, item]);
+        }
+      });
+    }
+  }, [array]);
+
+  const fetchHistoryQuestions = useCallback(() => {
+    for (let item of array) {
+      Axios.get(
+        `https://opentdb.com/api.php?amount=50&category=23&difficulty=${item}&type=multiple`
+      ).then((resp) => {
+        let array = resp.data.results;
+        for (let item of array) {
+          item.question = convert(item.question);
+          item.question = convertOtherSymbols(item.question);
+          setAllquestions((prevData) => [...prevData, item]);
+        }
+      });
+    }
+  }, [array]);
+
+  const fetchPoliticsQuestions = useCallback(() => {
+    for (let item of array) {
+      Axios.get(
+        `https://opentdb.com/api.php?amount=50&category=24&difficulty=${item}&type=multiple`
+      ).then((resp) => {
+        let array = resp.data.results;
+        for (let item of array) {
+          item.question = convert(item.question);
+          item.question = convertOtherSymbols(item.question);
+          setAllquestions((prevData) => [...prevData, item]);
+        }
+      });
+    }
+  }, [array]);
+
+  const fetchAnimalsQuestions = useCallback(() => {
+    for (let item of array) {
+      Axios.get(
+        `https://opentdb.com/api.php?amount=50&category=27&difficulty=${item}&type=multiple`
+      ).then((resp) => {
+        let array = resp.data.results;
+        for (let item of array) {
+          item.question = convert(item.question);
+          item.question = convertOtherSymbols(item.question);
+          setAllquestions((prevData) => [...prevData, item]);
+        }
+      });
+    }
+  }, [array]);
 
   useEffect(() => {
     fetchGeneralQuestions();
+    // fetchAnimalsQuestions();
+    //fetchHistoryQuestions();
+    // fetchMythologyQuestions();
+    // fetchScienceNatureQuestions();
+    // fetchPoliticsQuestions();
   }, [fetchGeneralQuestions]);
 
   return (

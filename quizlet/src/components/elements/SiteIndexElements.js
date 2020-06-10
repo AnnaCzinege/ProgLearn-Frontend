@@ -62,7 +62,7 @@ export const Card = styled.div`
   transition: all 0.12s;
   justify-content: flex-start;
   box-sizing: inherit;
-  border: 5px solid #c5c6c7;
+  border: 5px solid #ffae6d;
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
     border: 5px solid #45a29e;

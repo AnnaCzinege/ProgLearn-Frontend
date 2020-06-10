@@ -64,7 +64,7 @@ export const StyledRadioButton = styled.div`
   border: 3px solid #aaaaaa;
   border-color: ${(props) =>
     props.checked && props.theme === "dark"
-      ? "#66fcf1"
+      ? "#ffae6d"
       : props.checked && props.theme === "light"
       ? "#ffae6d"
       : "#aaaaaa"};
@@ -87,7 +87,7 @@ export const StyledRadioButton = styled.div`
     margin: auto;
     background: ${(props) =>
       props.checked && props.theme === "dark"
-        ? "#66fcf1"
+        ? "#ffae6d"
         : props.checked && props.theme === "light"
         ? "#ffae6d"
         : ""};
@@ -126,7 +126,7 @@ export const StyledLabel = styled.label`
   transition: all 0.25s linear;
   color: ${(props) =>
     props.checked && props.theme === "dark"
-      ? "#66fcf1"
+      ? "#ffae6d"
       : props.checked && props.theme === "light"
       ? "#ffae6d"
       : "#aaaaaa"};

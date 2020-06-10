@@ -20,7 +20,7 @@ export const StyledHeader = styled.div`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${(props) => (props.theme === "light" ? "#1f2833" : "#66fcf1")};
-  font-size: 22px;
+  font-size: 28px;
   font-family: "Raleway-Medium";
 `;
 

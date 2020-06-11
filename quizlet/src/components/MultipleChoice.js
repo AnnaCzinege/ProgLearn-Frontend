@@ -30,6 +30,62 @@ const MultipleChoice = () => {
     }
   };
 
+  const incorrectAnswers = (options) => {
+    options.map((option) => {
+      return (
+        <OptionContainer>
+          <OptionOuter>
+            <OptionInner>
+              <Option>{option}</Option>
+            </OptionInner>
+          </OptionOuter>
+        </OptionContainer>
+      );
+    });
+  };
+
+  const CurrentOptions = (props) => {
+    console.log(props);
+    console.log(selectedQuestions);
+    for (let item of selectedQuestions) {
+      console.log(item.id);
+      if (item.id === props.id) {
+        return (
+          <OptionContent>
+            <OptionContainer>
+              <OptionOuter>
+                <OptionInner>
+                  <Option>{item.incorrect_answers[0]}</Option>
+                </OptionInner>
+              </OptionOuter>
+            </OptionContainer>
+            <OptionContainer>
+              <OptionOuter>
+                <OptionInner>
+                  <Option>{item.incorrect_answers[1]}</Option>
+                </OptionInner>
+              </OptionOuter>
+            </OptionContainer>
+            <OptionContainer>
+              <OptionOuter>
+                <OptionInner>
+                  <Option>{item.incorrect_answers[2]}</Option>
+                </OptionInner>
+              </OptionOuter>
+            </OptionContainer>
+            <OptionContainer>
+              <OptionOuter>
+                <OptionInner>
+                  <Option>{item.correct_answer}</Option>
+                </OptionInner>
+              </OptionOuter>
+            </OptionContainer>
+          </OptionContent>
+        );
+      }
+    }
+  };
+
   return (
     <Section currentTheme={currentTheme}>
       <ViewLayer>
@@ -40,34 +96,7 @@ const MultipleChoice = () => {
             </QuestionContainer>
           </QuestionContent>
           <OptionContent>
-            <OptionContainer>
-              <OptionOuter>
-                <OptionInner>
-                  <Option>Anna</Option>
-                </OptionInner>
-              </OptionOuter>
-            </OptionContainer>
-            <OptionContainer>
-              <OptionOuter>
-                <OptionInner>
-                  <Option>Anna</Option>
-                </OptionInner>
-              </OptionOuter>
-            </OptionContainer>
-            <OptionContainer>
-              <OptionOuter>
-                <OptionInner>
-                  <Option>Anna</Option>
-                </OptionInner>
-              </OptionOuter>
-            </OptionContainer>
-            <OptionContainer>
-              <OptionOuter>
-                <OptionInner>
-                  <Option>Anna</Option>
-                </OptionInner>
-              </OptionOuter>
-            </OptionContainer>
+            <CurrentOptions id={currentId} />
           </OptionContent>
         </Content>
       </ViewLayer>

@@ -34,6 +34,18 @@ const MultipleChoice = () => {
     }
   };
 
+  const clickedOnNext = () => {
+    if (currentId < selectedQuestions.length) {
+      setCurrentId(currentId + 1);
+    }
+  };
+
+  const clickedOnPrevious = () => {
+    if (currentId > 1) {
+      setCurrentId(currentId - 1);
+    }
+  };
+
   const shuffleOptions = (item) => {
     let array = [];
     array.push(item.correct_answer);
@@ -56,10 +68,7 @@ const MultipleChoice = () => {
   };
 
   const CurrentOptions = (props) => {
-    console.log(props);
-    console.log(selectedQuestions);
     for (let item of selectedQuestions) {
-      console.log(item.id);
       if (item.id === props.id) {
         let options = shuffleOptions(item);
         return (
@@ -113,9 +122,9 @@ const MultipleChoice = () => {
         </Card>
       </Content>
       <ButtonContainer>
-        <Button>Previous</Button>
+        <Button onClick={clickedOnPrevious}>Previous</Button>
         <Number>{currentId}</Number>
-        <Button>Next</Button>
+        <Button onClick={clickedOnNext}>Next</Button>
       </ButtonContainer>
     </Section>
   );

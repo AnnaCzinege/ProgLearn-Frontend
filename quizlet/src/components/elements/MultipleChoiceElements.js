@@ -25,16 +25,19 @@ export const Content = styled.div`
 `;
 
 export const Card = styled.div`
-  padding: 20px;
-  border-color: "#ffae6d";
+  padding: 5px;
+  border-color: ${(props) =>
+    props.theme === "light" ? "#ffae6d" : "whitesmoke"};
   align-items: center;
   vertical-align: center;
   text-align: center;
   border-radius: 0.25rem;
-  height: 200px;
+  height: 180px;
   margin: 2rem 1rem 0;
   width: 60%;
-  box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0.4rem 0;
+  background-color: ${(props) =>
+    props.theme === "light" ? "#f9f9f9" : "#1f2833"};
   transition: all 0.12s;
   justify-content: center;
   box-sizing: inherit;
@@ -85,16 +88,13 @@ export const OptionOuter = styled.div`
   border-color: ${(props) =>
     props.theme === "light" ? "#c5c6c7" : "whitesmoke"};
   &[data-answer="right"] {
-    border-color: ${(props) =>
-      props.theme === "light" ? "green" : "lightgreen"};
-    background-color: ${(props) =>
-      props.theme === "light" ? "green" : "lightgreen"};
+    border-color: green;
+    background-color: green;
     color: "whitesmoke";
   }
   &[data-answer="wrong"] {
-    border-color: ${(props) =>
-      props.theme === "light" ? "red" : "whitesmoke"};
-    background-color: ${(props) => (props.theme === "light" ? "red" : "red")};
+    border-color: red;
+    background-color: red;
     color: "whitesmoke";
   }
   border-radius: 0.25rem;
@@ -116,20 +116,7 @@ export const OptionOuter = styled.div`
   font-weight: bold;
   position: relative;
   display: block;
-`;
-
-export const OptionInner = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-`;
-
-export const Option = styled.div`
-  font-family: "Raleway-Regular";
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  display: block;
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "whitesmoke")};
 `;
 
 export const ButtonContainer = styled.div`
@@ -162,7 +149,7 @@ export const Number = styled.div`
   margin: 0 0.3rem;
   box-sizing: border-box;
   border-radius: 0.25rem;
-  color: #1f2833;
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "#c5c6c7")};
   font-size: 22px;
   font-family: "Raleway-Medium";
 `;

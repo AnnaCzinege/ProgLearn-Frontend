@@ -8,8 +8,6 @@ import {
   Question,
   OptionContainer,
   OptionOuter,
-  OptionInner,
-  Option,
   Card,
   Button,
   ButtonContainer,
@@ -28,10 +26,6 @@ const MultipleChoice = () => {
   const { selectedQuestions } = useContext(QuestionContext);
   const { difficulty, number, topic } = useContext(QuizContext);
   const [currentId, setCurrentId] = useState(1);
-  const [option1, setOption1] = useState("");
-  const [option2, setOption2] = useState("");
-  const [option3, setOption3] = useState("");
-  const [option4, setOption4] = useState("");
 
   const CurrentQuestion = (props) => {
     for (let item of selectedQuestions) {
@@ -92,7 +86,6 @@ const MultipleChoice = () => {
     for (let item of selectedQuestions) {
       if (item.id === props.id) {
         let options = shuffleOptions(item);
-        console.log(options);
         return (
           <OptionContent>
             <OptionContainer>
@@ -145,8 +138,11 @@ const MultipleChoice = () => {
       <StyledParagraph theme={theme}>
         Number of questions: {number}
       </StyledParagraph>
+      {/* <StyledParagraph theme={theme}>
+        {right}/{number}
+      </StyledParagraph> */}
       <Content>
-        <Card>
+        <Card theme={theme}>
           <QuestionContent>
             <QuestionContainer>
               <CurrentQuestion id={currentId} theme={theme} />
@@ -159,7 +155,7 @@ const MultipleChoice = () => {
       </Content>
       <ButtonContainer>
         <Button onClick={clickedOnPrevious}>Previous</Button>
-        <Number>{currentId}</Number>
+        <Number theme={theme}>{currentId}</Number>
         <Button onClick={clickedOnNext}>Next</Button>
       </ButtonContainer>
     </Section>

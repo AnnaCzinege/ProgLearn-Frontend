@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const StyledTitle = styled.p`
   text-align: center;
-  margin-top: 150px;
+  margin-top: 200px;
   font-size: 32px;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
@@ -67,7 +67,7 @@ export const StyledRadioButton = styled.div`
       ? "#ffae6d"
       : props.checked && props.theme === "light"
       ? "#ffae6d"
-      : "#aaaaaa"};
+      : "#919191"};
   border-radius: 100%;
   height: 15px;
   width: 15px;
@@ -96,6 +96,7 @@ export const StyledRadioButton = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.25);
   color: ${(props) => (props.theme === "dark" ? "#1f2833" : "whitesmoke")};
   border: 3px solid
     ${(props) => (props.theme === "dark" ? "#66fcf1" : "#ffae6d")};
@@ -105,6 +106,9 @@ export const StyledLink = styled(Link)`
   background-color: ${(props) =>
     props.theme === "dark" ? "#66fcf1" : "#ffae6d"};
   font-family: "Raleway-Regular";
+  &:hover {
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const RadioButtonContainer = styled.div`
@@ -129,5 +133,5 @@ export const StyledLabel = styled.label`
       ? "#ffae6d"
       : props.checked && props.theme === "light"
       ? "#ffae6d"
-      : "#aaaaaa"};
+      : "#919191"};
 `;

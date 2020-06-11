@@ -21,7 +21,7 @@ export const Content = styled.div`
   justify-content: center;
   display: flex;
   box-sizing: inherit;
-  padding-top: 250px;
+  padding-top: 25px;
 `;
 
 export const Card = styled.div`
@@ -146,4 +146,21 @@ export const Number = styled.div`
   color: #1f2833;
   font-size: 22px;
   font-family: "Raleway-Medium";
+`;
+
+export const StyledTitle = styled.p`
+  text-align: center;
+  margin-top: 150px;
+  font-size: 32px;
+  font-family: "Raleway-Regular";
+  letter-spacing: 1.5px;
+  color: #ffae6d;
+  font-weight: ${(props) => (props.theme === "light" ? "bold" : "")};
+`;
+
+export const StyledParagraph = styled.p`
+  padding-top: 3px;
+  font-size: 18px;
+  font-family: "Raleway-Regular";
+  color: ${(props) => (props.theme === "light" ? "#1f2833" : "whitesmoke")};
 `;

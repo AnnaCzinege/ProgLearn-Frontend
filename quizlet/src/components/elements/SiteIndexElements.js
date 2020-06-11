@@ -8,6 +8,7 @@ export const StyledTitle = styled.h1`
   font-weight: bold;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
+  z-index: 2;
   color: ${(props) => (props.theme === "light" ? "#ffae6d" : "#ffae6d")};
 `;
 
@@ -63,7 +64,7 @@ export const Card = styled.div`
   transition: all 0.12s;
   justify-content: flex-start;
   box-sizing: inherit;
-  border: 5px solid #45a29e;
+  border: 3px solid #45a29e;
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
     border: 5px solid #ffae6d;

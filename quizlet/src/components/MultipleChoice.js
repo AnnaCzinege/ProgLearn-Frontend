@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import {
   Section,
-  ViewLayer,
   Content,
   QuestionContent,
   OptionContent,
@@ -15,15 +14,19 @@ import {
   Button,
   ButtonContainer,
   Number,
+  StyledTitle,
+  StyledParagraph,
 } from "./elements/MultipleChoiceElements";
 import { ThemeContext } from "./contexts/ThemeContext";
 import AppTheme from "./Colors";
 import { QuestionContext } from "./contexts/QuestionContext";
+import { QuizContext } from "./contexts/QuizContext";
 
 const MultipleChoice = () => {
   const theme = useContext(ThemeContext)[0];
   const currentTheme = AppTheme[theme];
   const { selectedQuestions } = useContext(QuestionContext);
+  const { difficulty, number, topic } = useContext(QuizContext);
   const [currentId, setCurrentId] = useState(1);
 
   const CurrentQuestion = (props) => {
@@ -109,6 +112,12 @@ const MultipleChoice = () => {
 
   return (
     <Section currentTheme={currentTheme}>
+      <StyledTitle theme={theme}>Select the correct answer!</StyledTitle>
+      <StyledParagraph theme={theme}>Category: {topic}</StyledParagraph>
+      <StyledParagraph theme={theme}>Difficulty: {difficulty}</StyledParagraph>
+      <StyledParagraph theme={theme}>
+        Number of questions: {number}
+      </StyledParagraph>
       <Content>
         <Card>
           <QuestionContent>

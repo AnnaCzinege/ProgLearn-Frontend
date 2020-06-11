@@ -28,6 +28,10 @@ const MultipleChoice = () => {
   const { selectedQuestions } = useContext(QuestionContext);
   const { difficulty, number, topic } = useContext(QuizContext);
   const [currentId, setCurrentId] = useState(1);
+  const [option1, setOption1] = useState("");
+  const [option2, setOption2] = useState("");
+  const [option3, setOption3] = useState("");
+  const [option4, setOption4] = useState("");
 
   const CurrentQuestion = (props) => {
     for (let item of selectedQuestions) {
@@ -35,6 +39,18 @@ const MultipleChoice = () => {
         return <Question theme={props.theme}>{item.question}</Question>;
       }
     }
+  };
+
+  const clickedOnOption = (event) => {
+    let answer = event.target.getAttribute("data-answer");
+    console.log(answer);
+    if (answer === "true") {
+      event.target.setAttribute("data-answer", "right");
+    } else {
+      event.target.setAttribute("data-answer", "wrong");
+    }
+    console.log(event.target.getAttribute("data-answer"));
+    setTimeout(clickedOnNext, 1000);
   };
 
   const clickedOnNext = () => {
@@ -51,8 +67,10 @@ const MultipleChoice = () => {
 
   const shuffleOptions = (item) => {
     let array = [];
-    array.push(item.correct_answer);
-    array = array.concat(item.incorrect_answers);
+    array.push({ option: item.correct_answer, correct: "true" });
+    for (let answer of item.incorrect_answers) {
+      array.push({ option: answer, correct: "false" });
+    }
     array = shuffleArray(array);
     return array;
   };
@@ -74,34 +92,43 @@ const MultipleChoice = () => {
     for (let item of selectedQuestions) {
       if (item.id === props.id) {
         let options = shuffleOptions(item);
+        console.log(options);
         return (
           <OptionContent>
             <OptionContainer>
-              <OptionOuter theme={theme}>
-                <OptionInner>
-                  <Option>{options[0]}</Option>
-                </OptionInner>
+              <OptionOuter
+                theme={theme}
+                data-answer={options[0].correct}
+                onClick={clickedOnOption}
+              >
+                {options[0].option}
               </OptionOuter>
             </OptionContainer>
             <OptionContainer>
-              <OptionOuter theme={theme}>
-                <OptionInner>
-                  <Option>{options[1]}</Option>
-                </OptionInner>
+              <OptionOuter
+                theme={theme}
+                data-answer={options[1].correct}
+                onClick={clickedOnOption}
+              >
+                {options[1].option}
               </OptionOuter>
             </OptionContainer>
             <OptionContainer>
-              <OptionOuter theme={theme}>
-                <OptionInner>
-                  <Option>{options[2]}</Option>
-                </OptionInner>
+              <OptionOuter
+                theme={theme}
+                data-answer={options[2].correct}
+                onClick={clickedOnOption}
+              >
+                {options[2].option}
               </OptionOuter>
             </OptionContainer>
             <OptionContainer>
-              <OptionOuter theme={theme}>
-                <OptionInner>
-                  <Option>{options[3]}</Option>
-                </OptionInner>
+              <OptionOuter
+                theme={theme}
+                data-answer={options[3].correct}
+                onClick={clickedOnOption}
+              >
+                {options[3].option}
               </OptionOuter>
             </OptionContainer>
           </OptionContent>

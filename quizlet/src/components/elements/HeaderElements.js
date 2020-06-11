@@ -10,7 +10,7 @@ export const StyledHeader = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 120px;
+  height: 100px;
   z-index: 10;
   border-bottom: 1px solid
     ${(props) => (props.theme === "light" ? "#45a29e" : "#c5c6c7")};

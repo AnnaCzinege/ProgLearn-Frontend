@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const StyledTitle = styled.p`
   text-align: center;
-  margin-top: 200px;
+  margin-top: 170px;
   font-size: 32px;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;

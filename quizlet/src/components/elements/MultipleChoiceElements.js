@@ -81,8 +81,22 @@ export const OptionContainer = styled.div`
 `;
 
 export const OptionOuter = styled.div`
-  border: 0.125rem solid
-    ${(props) => (props.theme === "light" ? "#c5c6c7" : "#66fcf1")};
+  border: 0.125rem solid;
+  border-color: ${(props) =>
+    props.theme === "light" ? "#c5c6c7" : "whitesmoke"};
+  &[data-answer="right"] {
+    border-color: ${(props) =>
+      props.theme === "light" ? "green" : "lightgreen"};
+    background-color: ${(props) =>
+      props.theme === "light" ? "green" : "lightgreen"};
+    color: "whitesmoke";
+  }
+  &[data-answer="wrong"] {
+    border-color: ${(props) =>
+      props.theme === "light" ? "red" : "whitesmoke"};
+    background-color: ${(props) => (props.theme === "light" ? "red" : "red")};
+    color: "whitesmoke";
+  }
   border-radius: 0.25rem;
   cursor: pointer;
   padding: 0.75rem;
@@ -97,6 +111,11 @@ export const OptionOuter = styled.div`
   &:hover {
     border-color: #ffae6d;
   }
+  font-family: "Raleway-Regular";
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  display: block;
 `;
 
 export const OptionInner = styled.div`

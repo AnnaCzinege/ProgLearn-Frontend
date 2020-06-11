@@ -67,7 +67,7 @@ export const Card = styled.div`
   border: 3px solid #45a29e;
   &:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
-    border: 5px solid #ffae6d;
+    border: 3px solid #ffae6d;
     background: #f9f9f9;
   }
 `;

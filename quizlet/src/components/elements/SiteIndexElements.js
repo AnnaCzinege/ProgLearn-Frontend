@@ -57,7 +57,7 @@ export const Card = styled.div`
   text-align: center;
   border-radius: 0.25rem;
   height: 10rem;
-  margin: 1.5rem 0.6rem 0;
+  margin: 1.5rem 1rem 0;
   width: 20rem;
   box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.25);
   transition: all 0.12s;
@@ -76,6 +76,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   box-sizing: inherit;
+  margin: 0 30px;
 `;
 
 export const CardSection = styled.div`

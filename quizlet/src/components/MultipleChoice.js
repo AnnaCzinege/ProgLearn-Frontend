@@ -11,6 +11,10 @@ import {
   OptionOuter,
   OptionInner,
   Option,
+  Card,
+  Button,
+  ButtonContainer,
+  Number,
 } from "./elements/MultipleChoiceElements";
 import { ThemeContext } from "./contexts/ThemeContext";
 import AppTheme from "./Colors";
@@ -25,23 +29,30 @@ const MultipleChoice = () => {
   const CurrentQuestion = (props) => {
     for (let item of selectedQuestions) {
       if (item.id === props.id) {
-        return <Question>{item.question}</Question>;
+        return <Question theme={props.theme}>{item.question}</Question>;
       }
     }
   };
 
-  const incorrectAnswers = (options) => {
-    options.map((option) => {
-      return (
-        <OptionContainer>
-          <OptionOuter>
-            <OptionInner>
-              <Option>{option}</Option>
-            </OptionInner>
-          </OptionOuter>
-        </OptionContainer>
-      );
-    });
+  const shuffleOptions = (item) => {
+    let array = [];
+    array.push(item.correct_answer);
+    array = array.concat(item.incorrect_answers);
+    array = shuffleArray(array);
+    return array;
+  };
+
+  const shuffleArray = (array) => {
+    let counter = array.length;
+
+    while (counter > 0) {
+      let index = Math.floor(Math.random() * counter);
+      counter--;
+      let temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+    }
+    return array;
   };
 
   const CurrentOptions = (props) => {
@@ -50,33 +61,34 @@ const MultipleChoice = () => {
     for (let item of selectedQuestions) {
       console.log(item.id);
       if (item.id === props.id) {
+        let options = shuffleOptions(item);
         return (
           <OptionContent>
             <OptionContainer>
-              <OptionOuter>
+              <OptionOuter theme={theme}>
                 <OptionInner>
-                  <Option>{item.incorrect_answers[0]}</Option>
+                  <Option>{options[0]}</Option>
                 </OptionInner>
               </OptionOuter>
             </OptionContainer>
             <OptionContainer>
-              <OptionOuter>
+              <OptionOuter theme={theme}>
                 <OptionInner>
-                  <Option>{item.incorrect_answers[1]}</Option>
+                  <Option>{options[1]}</Option>
                 </OptionInner>
               </OptionOuter>
             </OptionContainer>
             <OptionContainer>
-              <OptionOuter>
+              <OptionOuter theme={theme}>
                 <OptionInner>
-                  <Option>{item.incorrect_answers[2]}</Option>
+                  <Option>{options[2]}</Option>
                 </OptionInner>
               </OptionOuter>
             </OptionContainer>
             <OptionContainer>
-              <OptionOuter>
+              <OptionOuter theme={theme}>
                 <OptionInner>
-                  <Option>{item.correct_answer}</Option>
+                  <Option>{options[3]}</Option>
                 </OptionInner>
               </OptionOuter>
             </OptionContainer>
@@ -88,18 +100,23 @@ const MultipleChoice = () => {
 
   return (
     <Section currentTheme={currentTheme}>
-      <ViewLayer>
-        <Content>
+      <Content>
+        <Card>
           <QuestionContent>
             <QuestionContainer>
-              <CurrentQuestion id={currentId} />
+              <CurrentQuestion id={currentId} theme={theme} />
             </QuestionContainer>
           </QuestionContent>
           <OptionContent>
             <CurrentOptions id={currentId} />
           </OptionContent>
-        </Content>
-      </ViewLayer>
+        </Card>
+      </Content>
+      <ButtonContainer>
+        <Button>Previous</Button>
+        <Number>{currentId}</Number>
+        <Button>Next</Button>
+      </ButtonContainer>
     </Section>
   );
 };

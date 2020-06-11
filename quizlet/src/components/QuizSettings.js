@@ -112,14 +112,18 @@ const LearningMode = (props) => {
   const selectQuestions = () => {
     let questions = [];
     let counter = 0;
+    let id = 1;
+    setSelectedQuestions([]);
     for (let item of allQuestions) {
       if (
         item["category"] === topic &&
         item["difficulty"] === difficulty &&
         counter < number
       ) {
+        item["id"] = id;
         questions.push(item);
         counter++;
+        id++;
       }
     }
     for (let item of questions) {

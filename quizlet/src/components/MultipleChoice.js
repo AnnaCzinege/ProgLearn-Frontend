@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useCallback } from "react";
+import React, { useContext, useState } from "react";
 import {
   Section,
   ViewLayer,
@@ -14,17 +14,21 @@ import {
 } from "./elements/MultipleChoiceElements";
 import { ThemeContext } from "./contexts/ThemeContext";
 import AppTheme from "./Colors";
-import { QuizContext } from "./contexts/QuizContext";
 import { QuestionContext } from "./contexts/QuestionContext";
 
 const MultipleChoice = () => {
   const theme = useContext(ThemeContext)[0];
   const currentTheme = AppTheme[theme];
   const { selectedQuestions } = useContext(QuestionContext);
+  const [currentId, setCurrentId] = useState(1);
 
-  const questions = selectedQuestions.map((item) => {
-    return <div key={item.question}>{item.question}</div>;
-  });
+  const CurrentQuestion = (props) => {
+    for (let item of selectedQuestions) {
+      if (item.id === props.id) {
+        return <Question>{item.question}</Question>;
+      }
+    }
+  };
 
   return (
     <Section currentTheme={currentTheme}>
@@ -32,7 +36,7 @@ const MultipleChoice = () => {
         <Content>
           <QuestionContent>
             <QuestionContainer>
-              <Question>{questions}</Question>
+              <CurrentQuestion id={currentId} />
             </QuestionContainer>
           </QuestionContent>
           <OptionContent>

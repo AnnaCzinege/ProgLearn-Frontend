@@ -28,51 +28,34 @@ const SiteIndex = () => {
           <CardContainer>
             <StyledTopicLink
               to={{
-                pathname: `/topic/animals`,
+                pathname: `/topic/entertainment:-music`,
+              }}
+              //12
+            >
+              <Card theme={theme}>
+                <CardTitle theme={theme}>Entertainment: Music</CardTitle>
+                <CardImg />
+              </Card>
+            </StyledTopicLink>
+            <StyledTopicLink
+              //15
+              to={{
+                pathname: `/topic/entertainment:-video-games`,
               }}
             >
               <Card theme={theme}>
-                <CardTitle theme={theme}>Animals</CardTitle>
+                <CardTitle theme={theme}>Entertainment: Video Games</CardTitle>
                 <CardImg />
               </Card>
             </StyledTopicLink>
             <StyledTopicLink
               to={{
-                pathname: `/topic/history`,
+                pathname: `/topic/geography`,
               }}
+              //22
             >
               <Card theme={theme}>
-                <CardTitle theme={theme}>History</CardTitle>
-                <CardImg />
-              </Card>
-            </StyledTopicLink>
-            <StyledTopicLink
-              to={{
-                pathname: `/topic/politics`,
-              }}
-            >
-              <Card theme={theme}>
-                <CardTitle theme={theme}>Politics</CardTitle>
-                <CardImg />
-              </Card>
-            </StyledTopicLink>
-            <StyledTopicLink
-              to={{
-                pathname: `/topic/science-&-nature`,
-              }}
-            >
-              <Card theme={theme}>
-                <CardTitle theme={theme}>Science & Nature</CardTitle>
-                <CardImg />
-              </Card>
-            </StyledTopicLink>
-            <StyledTopicLink
-              to={{
-                pathname: `/topic/mythology`,
-              }}
-            >
-              <Card theme={theme}>
-                <CardTitle theme={theme}>Mythology</CardTitle>
+                <CardTitle theme={theme}>Geography</CardTitle>
                 <CardImg />
               </Card>
             </StyledTopicLink>
@@ -80,6 +63,7 @@ const SiteIndex = () => {
               to={{
                 pathname: `/topic/general-knowledge`,
               }}
+              //9
             >
               <Card theme={theme}>
                 <CardTitle theme={theme}>General knowledge</CardTitle>

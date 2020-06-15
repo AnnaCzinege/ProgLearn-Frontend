@@ -18,6 +18,9 @@ ProgLearn is a web application made for learning about various topics in a playf
 ⚬ Multiple choice quiz</br>
 ⚬ Flashcards</br>
 
+## Demo
+![ProgLearn demo](demo/ProgLearn.gif)
+
 ## How to run
 
 First of all, Node.js have to be installed on your system to run the React application.

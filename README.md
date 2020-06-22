@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## The project
 
-This repository contains the frontend for the website called ProgLearn (similar to [Quizlet](https://www.quizlet.com/) learning website). It is a two sprint long project (one sprint - two weeks) which aims to create a "one-pager" website that displays the ProgLearn web application.</br>
+This repository contains the frontend for the website called ProgLearn (similar to [Quizlet](https://www.quizlet.com/) learning website). This project is still under development (started in June, 2020) and it aims to create a "one-pager" website that displays the ProgLearn web application.</br>
 
 ### Used technologies
 
@@ -33,6 +33,8 @@ Run `npm start` and the application will run.
 ## Contributors
 
 ⚬ [Anna Czinege](https://github.com/AnnaCzinege)</br>
+
+**Under development**
 
 ## Available Scripts
 In the project directory, you can run:

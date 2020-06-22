@@ -21,6 +21,10 @@ ProgLearn is a web application made for learning about various topics in a playf
 ## Demo
 ![ProgLearn demo](demo/ProgLearn.gif)
 
+## Backend
+
+The ProgLearn frontend that acts as the presentation layer for the project is available at the following link: [ProgLearn-Backend](https://github.com/AnnaCzinege/ProgLearn-Backend)
+
 ## How to run
 
 First of all, Node.js have to be installed on your system to run the React application.

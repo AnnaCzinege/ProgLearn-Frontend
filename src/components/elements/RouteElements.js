@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import SiteIndex from "../SiteIndex";
 import QuizSettings from "../QuizSettings";
-import MultipleChoice from "../MultipleChoice";
+import Quiz from "../Quiz";
 
 export const indexRoute = (
   <Route
@@ -18,4 +18,4 @@ export const indexRoute = (
 
 export const topicRoute = <Route path="/topic/" component={QuizSettings} />;
 
-export const quizRoute = <Route path="/quiz/" component={MultipleChoice} />;
+export const quizRoute = <Route path="/quiz/" component={Quiz} />;

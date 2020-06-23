@@ -18,6 +18,9 @@ export const CardInner = styled.div`
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  &:hover {
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+  }
   transform: ${(props) =>
     props.clicked === "clicked" ? "rotateY(180deg)" : ""};
 `;
@@ -27,7 +30,7 @@ export const CardFront = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 0.25rem;
-  border: 2px solid;
+  border: 3px solid;
   border-color: #45a29e;
   color: #0b0c10;
   text-align: center;

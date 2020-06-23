@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   background-color: transparent;
-  width: 300px;
+  width: 60%;
   height: 200px;
-  /*border: 1px solid #f1f1f1;*/
   perspective: 1000px;
 `;
 

@@ -9,6 +9,7 @@ import {
 import { Question } from "./elements/MultipleChoiceElements";
 import { QuestionContext } from "./contexts/QuestionContext";
 import { ThemeContext } from "./contexts/ThemeContext";
+import { Content } from "./elements/MultipleChoiceElements";
 
 const Flashcard = () => {
   const [clicked, setClicked] = useState("");
@@ -37,7 +38,7 @@ const Flashcard = () => {
   };
 
   return (
-    <div>
+    <Content>
       <CardContainer>
         <CardInner clicked={clicked} onClick={clickedOnCard}>
           <CardFront>
@@ -48,7 +49,7 @@ const Flashcard = () => {
           </CardBack>
         </CardInner>
       </CardContainer>
-    </div>
+    </Content>
   );
 };
 

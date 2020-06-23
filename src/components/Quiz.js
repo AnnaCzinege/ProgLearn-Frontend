@@ -28,6 +28,7 @@ const Quiz = () => {
   const theme = useContext(ThemeContext)[0];
   const currentTheme = AppTheme[theme];
   const [currentId, setCurrentId] = useState(1);
+  const [quizMode, setQuizMode] = useState("multiple_choice");
   const { selectedQuestions } = useContext(QuestionContext);
   const { difficulty, number, topic, quizTitle } = useContext(QuizContext);
 
@@ -40,6 +41,14 @@ const Quiz = () => {
   const clickedOnPrevious = () => {
     if (currentId > 1) {
       setCurrentId(currentId - 1);
+    }
+  };
+
+  const SelectedQuiz = () => {
+    if (quizMode === "multiple_choice") {
+      return <MultipleChoice />;
+    } else {
+      return <Flashcard />;
     }
   };
 
@@ -60,16 +69,23 @@ const Quiz = () => {
             </div>
             <QuizDetails>
               <Navigation>
-                <NavButtonContainer>
-                  <NavButton>Multiple choice</NavButton>
-                </NavButtonContainer>
-                <NavButtonContainer>
-                  <NavButton>Flashcards</NavButton>
-                </NavButtonContainer>
+                <NavButton
+                  onClick={() => {
+                    setQuizMode("multiple_choice");
+                  }}
+                >
+                  Multiple choice
+                </NavButton>
+                <NavButton
+                  onClick={() => {
+                    setQuizMode("flashcard");
+                  }}
+                >
+                  Flashcards
+                </NavButton>
               </Navigation>
               <QuizSection>
-                <MultipleChoice />
-                <Flashcard />
+                <SelectedQuiz />
                 <ButtonContainer>
                   <Button onClick={clickedOnPrevious}>Previous</Button>
                   <Number theme={theme}>{currentId}</Number>

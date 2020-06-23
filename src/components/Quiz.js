@@ -22,7 +22,6 @@ import {
 
 const Quiz = () => {
   const theme = useContext(ThemeContext)[0];
-  const [clicked, setClicked] = useState("");
   const [quizMode, setQuizMode] = useState("multiple_choice");
   const { difficulty, number, topic, quizTitle, setQuizTitle } = useContext(
     QuizContext

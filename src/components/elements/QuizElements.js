@@ -38,6 +38,7 @@ export const TitleSection = styled.div`
 
 export const InfoContainer = styled.div`
   border-bottom: 2px dashed rgb(0, 0, 0, 0.25);
+  padding-top: 30px;
 `;
 
 export const QuizDetails = styled.div`
@@ -51,6 +52,8 @@ export const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
   padding-right: 20px;
+  padding-bottom: 250px;
+  overflow: visible;
   border-right: 2px dashed rgb(0, 0, 0, 0.25);
 `;
 

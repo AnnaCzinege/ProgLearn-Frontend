@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   CardContainer,
   CardInner,
@@ -6,9 +6,27 @@ import {
   CardBack,
   StyledSpan,
 } from "./elements/FlashcardElements";
+import { Question } from "./elements/MultipleChoiceElements";
+import { QuestionContext } from "./contexts/QuestionContext";
+import { QuizContext } from "./contexts/QuizContext";
+import { ThemeContext } from "./contexts/ThemeContext";
+import AppTheme from "./Colors";
 
 const Flashcard = () => {
   const [clicked, setClicked] = useState("");
+  const { selectedQuestions } = useContext(QuestionContext);
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
+  const { difficulty, number, topic } = useContext(QuizContext);
+  const [currentId, setCurrentId] = useState(1);
+
+  const CurrentQuestion = (props) => {
+    for (let item of selectedQuestions) {
+      if (item.id === props.id) {
+        return <Question theme={props.theme}>{item.question}</Question>;
+      }
+    }
+  };
 
   const clickedOnCard = () => {
     clicked === "" ? setClicked("clicked") : setClicked("");
@@ -19,7 +37,7 @@ const Flashcard = () => {
       <CardContainer>
         <CardInner clicked={clicked} onClick={clickedOnCard}>
           <CardFront>
-            <StyledSpan>almonds</StyledSpan>
+            <CurrentQuestion id={currentId} theme={theme} />
           </CardFront>
           <CardBack>
             <StyledSpan>almendras</StyledSpan>

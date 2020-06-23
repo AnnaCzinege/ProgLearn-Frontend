@@ -12,7 +12,6 @@ import {
 import { StyledParagraph } from "./elements/QuizSettingsElements";
 import { ThemeContext } from "./contexts/ThemeContext";
 import AppTheme from "./Colors";
-import Flashcard from "./Flashcard";
 
 const SiteIndex = () => {
   const theme = useContext(ThemeContext)[0];
@@ -26,7 +25,6 @@ const SiteIndex = () => {
           <StyledParagraph theme={theme}>
             Select a category and test your knowledge!
           </StyledParagraph>
-          <Flashcard />
           <CardContainer>
             <StyledTopicLink
               to={{

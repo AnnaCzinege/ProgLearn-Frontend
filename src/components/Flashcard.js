@@ -4,6 +4,7 @@ import {
   CardInner,
   CardFront,
   CardBack,
+  StyledSpan,
 } from "./elements/FlashcardElements";
 
 const Flashcard = () => {
@@ -15,14 +16,13 @@ const Flashcard = () => {
 
   return (
     <div>
-      <h1>Flashcards</h1>
       <CardContainer>
         <CardInner clicked={clicked} onClick={clickedOnCard}>
           <CardFront>
-            <span>almonds</span>
+            <StyledSpan>almonds</StyledSpan>
           </CardFront>
           <CardBack>
-            <span>almendras</span>
+            <StyledSpan>almendras</StyledSpan>
           </CardBack>
         </CardInner>
       </CardContainer>

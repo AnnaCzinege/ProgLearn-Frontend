@@ -16,9 +16,8 @@ export const CardInner = styled.div`
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  &:active {
-    transform: rotateY(180deg);
-  }
+  transform: ${(props) =>
+    props.clicked === "clicked" ? "rotateY(180deg)" : ""};
 `;
 
 export const CardFront = styled.div`

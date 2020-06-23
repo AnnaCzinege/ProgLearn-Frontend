@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CardContainer,
   CardInner,
@@ -7,11 +7,17 @@ import {
 } from "./elements/FlashcardElements";
 
 const Flashcard = () => {
+  const [clicked, setClicked] = useState("");
+
+  const clickedOnCard = () => {
+    clicked === "" ? setClicked("clicked") : setClicked("");
+  };
+
   return (
     <div>
       <h1>Flashcards</h1>
       <CardContainer>
-        <CardInner>
+        <CardInner clicked={clicked} onClick={clickedOnCard}>
           <CardFront>
             <span>almonds</span>
           </CardFront>

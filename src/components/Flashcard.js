@@ -6,7 +6,12 @@ import {
   CardBack,
   Answer,
 } from "./elements/FlashcardElements";
-import { Question } from "./elements/MultipleChoiceElements";
+import {
+  Question,
+  ButtonContainer,
+  Button,
+  Number,
+} from "./elements/MultipleChoiceElements";
 import { QuestionContext } from "./contexts/QuestionContext";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { Content } from "./elements/MultipleChoiceElements";
@@ -33,6 +38,18 @@ const Flashcard = () => {
     }
   };
 
+  const clickedOnNext = () => {
+    if (currentId < selectedQuestions.length) {
+      setCurrentId(currentId + 1);
+    }
+  };
+
+  const clickedOnPrevious = () => {
+    if (currentId > 1) {
+      setCurrentId(currentId - 1);
+    }
+  };
+
   const clickedOnCard = () => {
     clicked === "" ? setClicked("clicked") : setClicked("");
   };
@@ -48,6 +65,11 @@ const Flashcard = () => {
             <CurrentAnswer id={currentId} theme={theme} />
           </CardBack>
         </CardInner>
+        <ButtonContainer>
+          <Button onClick={clickedOnPrevious}>Previous</Button>
+          <Number theme={theme}>{currentId}</Number>
+          <Button onClick={clickedOnNext}>Next</Button>
+        </ButtonContainer>
       </CardContainer>
     </Content>
   );

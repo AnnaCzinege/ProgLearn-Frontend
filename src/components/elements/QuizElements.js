@@ -23,13 +23,25 @@ export const QuizContent = styled.div`
   margin: 0 auto;
   max-width: 54.5625rem;
   padding: 2.5rem;
+  padding-top: 25px;
   position: relative;
   @media screen and (min-width: 64.0625em) {
     max-width: 77.125rem;
   }
 `;
 
+export const TitleSection = styled.div`
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  margin-bottom: 2.5rem;
+`;
+
+export const InfoContainer = styled.div`
+  border-bottom: 2px dashed rgb(0, 0, 0, 0.25);
+`;
+
 export const QuizDetails = styled.div`
+  margin-top: 200px;
   box-sizing: inherit;
   display: flex;
   flex-direction: row;
@@ -37,7 +49,9 @@ export const QuizDetails = styled.div`
 
 export const Navigation = styled.nav`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding-right: 20px;
+  border-right: 2px dashed rgb(0, 0, 0, 0.25);
 `;
 
 export const NavButtonContainer = styled.div`
@@ -46,10 +60,15 @@ export const NavButtonContainer = styled.div`
 
 export const NavButton = styled.div`
   display: inline-block;
+  text-align: left;
+  cursor: pointer;
   margin: 0 0 0.8125rem;
   padding: 5px;
+  font-size: 20px;
+  font-family: "Raleway-Medium";
+  color: ${(props) => (props.name === props.quizMode ? "#ffae6d" : "#0b0c10")};
   &:hover {
-    text-decoration: underline;
+    text-decoration: underline #ffae6d;
   }
 `;
 

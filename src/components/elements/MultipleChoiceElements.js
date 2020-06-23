@@ -9,19 +9,10 @@ export const Section = styled.div`
   background-color: ${(props) => props.currentTheme};
 `;
 
-export const ViewLayer = styled.div`
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-`;
-
 export const Content = styled.div`
   justify-content: center;
   display: flex;
   box-sizing: inherit;
-  padding-top: 25px;
 `;
 
 export const Card = styled.div`
@@ -33,7 +24,6 @@ export const Card = styled.div`
   text-align: center;
   border-radius: 0.25rem;
   height: 180px;
-  margin: 2rem 1rem 0;
   width: 60%;
   box-shadow: 0 0 0.4rem 0;
   background-color: ${(props) =>
@@ -123,7 +113,7 @@ export const ButtonContainer = styled.div`
   justify-content: center;
   display: flex;
   box-sizing: inherit;
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 
 export const Button = styled.div`
@@ -156,7 +146,8 @@ export const Number = styled.div`
 
 export const StyledTitle = styled.p`
   text-align: center;
-  margin-top: 150px;
+  flex-basis: 100%;
+  word-break: break-word;
   font-size: 32px;
   font-family: "Raleway-Regular";
   letter-spacing: 1.5px;
@@ -165,6 +156,7 @@ export const StyledTitle = styled.p`
 `;
 
 export const StyledParagraph = styled.p`
+  text-align: left;
   padding-top: 3px;
   font-size: 18px;
   font-family: "Raleway-Regular";

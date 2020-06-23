@@ -8,6 +8,9 @@ import {
   OptionContainer,
   OptionOuter,
   Card,
+  ButtonContainer,
+  Button,
+  Number,
 } from "./elements/MultipleChoiceElements";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { QuestionContext } from "./contexts/QuestionContext";
@@ -40,6 +43,12 @@ const MultipleChoice = () => {
   const clickedOnNext = () => {
     if (currentId < selectedQuestions.length) {
       setCurrentId(currentId + 1);
+    }
+  };
+
+  const clickedOnPrevious = () => {
+    if (currentId > 1) {
+      setCurrentId(currentId - 1);
     }
   };
 
@@ -125,6 +134,11 @@ const MultipleChoice = () => {
         <OptionContent>
           <CurrentOptions id={currentId} />
         </OptionContent>
+        <ButtonContainer>
+          <Button onClick={clickedOnPrevious}>Previous</Button>
+          <Number theme={theme}>{currentId}</Number>
+          <Button onClick={clickedOnNext}>Next</Button>
+        </ButtonContainer>
       </Card>
     </Content>
   );

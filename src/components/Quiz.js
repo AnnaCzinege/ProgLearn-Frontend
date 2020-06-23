@@ -6,13 +6,23 @@ import AppTheme from "./Colors";
 import { QuizContext } from "./contexts/QuizContext";
 import { QuestionContext } from "./contexts/QuestionContext";
 import {
-  Section,
   StyledParagraph,
   StyledTitle,
   ButtonContainer,
   Button,
   Number,
 } from "./elements/MultipleChoiceElements";
+import {
+  Page,
+  ContentWrapper,
+  Content,
+  QuizContent,
+  QuizDetails,
+  Navigation,
+  NavButtonContainer,
+  NavButton,
+  QuizSection,
+} from "./elements/QuizElements";
 
 const Quiz = () => {
   const theme = useContext(ThemeContext)[0];
@@ -34,21 +44,43 @@ const Quiz = () => {
   };
 
   return (
-    <Section currentTheme={currentTheme}>
-      <StyledTitle theme={theme}>{quizTitle}</StyledTitle>
-      <StyledParagraph theme={theme}>Category: {topic}</StyledParagraph>
-      <StyledParagraph theme={theme}>Difficulty: {difficulty}</StyledParagraph>
-      <StyledParagraph theme={theme}>
-        Number of questions: {number}
-      </StyledParagraph>
-      <MultipleChoice />
-      <Flashcard />
-      <ButtonContainer>
-        <Button onClick={clickedOnPrevious}>Previous</Button>
-        <Number theme={theme}>{currentId}</Number>
-        <Button onClick={clickedOnNext}>Next</Button>
-      </ButtonContainer>
-    </Section>
+    <Page>
+      <ContentWrapper>
+        <Content>
+          <QuizContent>
+            <div>
+              <StyledTitle theme={theme}>{quizTitle}</StyledTitle>
+              <StyledParagraph theme={theme}>Category: {topic}</StyledParagraph>
+              <StyledParagraph theme={theme}>
+                Difficulty: {difficulty}
+              </StyledParagraph>
+              <StyledParagraph theme={theme}>
+                Number of questions: {number}
+              </StyledParagraph>
+            </div>
+            <QuizDetails>
+              <Navigation>
+                <NavButtonContainer>
+                  <NavButton>Multiple choice</NavButton>
+                </NavButtonContainer>
+                <NavButtonContainer>
+                  <NavButton>Flashcards</NavButton>
+                </NavButtonContainer>
+              </Navigation>
+              <QuizSection>
+                <MultipleChoice />
+                <Flashcard />
+                <ButtonContainer>
+                  <Button onClick={clickedOnPrevious}>Previous</Button>
+                  <Number theme={theme}>{currentId}</Number>
+                  <Button onClick={clickedOnNext}>Next</Button>
+                </ButtonContainer>
+              </QuizSection>
+            </QuizDetails>
+          </QuizContent>
+        </Content>
+      </ContentWrapper>
+    </Page>
   );
 };
 

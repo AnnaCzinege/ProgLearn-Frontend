@@ -49,6 +49,11 @@ export const CardBack = styled.div`
   transform: rotateY(180deg);
 `;
 
-export const StyledSpan = styled.div`
-  padding: 20px;
+export const Answer = styled.div`
+  padding-top: 50px;
+  font-family: "Raleway-Regular";
+  line-height: 22px;
+  font-size: 20px;
+  font-weight: bold;
+  color: ${(props) => (props.theme === "light" ? "#0b0c10" : "whitesmoke")};
 `;

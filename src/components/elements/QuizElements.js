@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
 export const Page = styled.div`
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-  display: block;
-  flex-grow: 1;
-  width: 100%;
-  margin-bottom: 0;
-  min-height: 37.5rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: ${(props) => props.currentTheme};
 `;
 
 export const ContentWrapper = styled.div`
@@ -52,9 +50,11 @@ export const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
   padding-right: 20px;
-  padding-bottom: 250px;
+  padding-bottom: 200px;
   overflow: visible;
-  border-right: 2px dashed rgb(0, 0, 0, 0.25);
+  border-right: 2px dashed;
+  border-color: ${(props) =>
+    props.theme === "light" ? "rgb(0, 0, 0, 0.25)" : "#c5c6c7"};
 `;
 
 export const NavButtonContainer = styled.div`
@@ -69,7 +69,12 @@ export const NavButton = styled.div`
   padding: 5px;
   font-size: 20px;
   font-family: "Raleway-Medium";
-  color: ${(props) => (props.name === props.quizMode ? "#ffae6d" : "#0b0c10")};
+  color: ${(props) =>
+    props.theme === "light" && props.name !== props.quizMode
+      ? "#0b0c10"
+      : props.theme === "dark" && props.name !== props.quizMode
+      ? "whitesmoke"
+      : "#ffae6d"};
   &:hover {
     text-decoration: underline #ffae6d;
   }

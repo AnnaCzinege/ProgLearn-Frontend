@@ -29,12 +29,10 @@ export const CardFront = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 0.25rem;
-  border: 3px solid;
-  border-color: #45a29e;
-  color: #0b0c10;
+  color: whitesmoke;
   text-align: center;
   backface-visibility: hidden;
-  background-color: whitesmoke;
+  background-color: #45a29e;
 `;
 
 export const CardBack = styled.div`
@@ -43,7 +41,7 @@ export const CardBack = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: #45a29e;
+  background-color: #ffae6d;
   color: whitesmoke;
   transform: rotateY(180deg);
 `;
@@ -54,5 +52,5 @@ export const Answer = styled.div`
   line-height: 22px;
   font-size: 20px;
   font-weight: bold;
-  color: ${(props) => (props.theme === "light" ? "#0b0c10" : "whitesmoke")};
+  color: whitesmoke;
 `;

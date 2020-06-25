@@ -7,7 +7,6 @@ import {
   Answer,
 } from "./elements/FlashcardElements";
 import {
-  Question,
   ButtonContainer,
   Button,
   Number,
@@ -25,7 +24,7 @@ const Flashcard = () => {
   const CurrentQuestion = (props) => {
     for (let item of selectedQuestions) {
       if (item.id === props.id) {
-        return <Question theme={props.theme}>{item.question}</Question>;
+        return <Answer theme={props.theme}>{item.question}</Answer>;
       }
     }
   };

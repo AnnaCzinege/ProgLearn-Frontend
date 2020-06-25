@@ -19,11 +19,12 @@ import {
   TitleSection,
   InfoContainer,
 } from "./elements/QuizElements";
+import AppTheme from "./Colors";
 
 const Quiz = () => {
   const theme = useContext(ThemeContext)[0];
-  const [clicked, setClicked] = useState("");
-  const [quizMode, setQuizMode] = useState("multiple_choice");
+  const currentTheme = AppTheme[theme];
+  const [quizMode, setQuizMode] = useState("flashcard");
   const { difficulty, number, topic, quizTitle, setQuizTitle } = useContext(
     QuizContext
   );
@@ -39,12 +40,12 @@ const Quiz = () => {
   };
 
   return (
-    <Page>
+    <Page currentTheme={currentTheme}>
       <ContentWrapper>
         <Content>
           <QuizContent>
             <QuizDetails>
-              <Navigation>
+              <Navigation theme={theme}>
                 <TitleSection>
                   <InfoContainer>
                     <StyledParagraph theme={theme}>
@@ -59,22 +60,24 @@ const Quiz = () => {
                   </InfoContainer>
                 </TitleSection>
                 <NavButton
-                  name="multiple_choice"
-                  quizMode={quizMode}
-                  onClick={() => {
-                    setQuizMode("multiple_choice");
-                  }}
-                >
-                  Multiple choice
-                </NavButton>
-                <NavButton
                   name="flashcard"
+                  theme={theme}
                   quizMode={quizMode}
                   onClick={() => {
                     setQuizMode("flashcard");
                   }}
                 >
                   Flashcards
+                </NavButton>
+                <NavButton
+                  name="multiple_choice"
+                  theme={theme}
+                  quizMode={quizMode}
+                  onClick={() => {
+                    setQuizMode("multiple_choice");
+                  }}
+                >
+                  Multiple choice
                 </NavButton>
               </Navigation>
               <QuizSection>

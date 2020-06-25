@@ -44,6 +44,7 @@ export const QuestionProvider = (props) => {
 
   useEffect(() => {
     fetchQuestions();
+    document.body.style.backgroundColor = "white";
   }, [fetchQuestions]);
 
   return (

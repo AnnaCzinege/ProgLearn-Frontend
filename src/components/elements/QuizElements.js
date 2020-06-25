@@ -35,7 +35,9 @@ export const TitleSection = styled.div`
 `;
 
 export const InfoContainer = styled.div`
-  border-bottom: 2px dashed rgb(0, 0, 0, 0.25);
+  border-bottom: 2px dashed;
+  border-color: ${(props) =>
+    props.theme === "light" ? "rgb(0, 0, 0, 0.25)" : "#c5c6c7"};
   padding-top: 30px;
 `;
 

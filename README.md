@@ -24,7 +24,7 @@ ProgLearn is a web application made for learning about various topics in a playf
 
 ## Backend
 
-The ProgLearn frontend that acts as the business logic layer and data access layer for the project is available at the following link: [ProgLearn-Backend](https://github.com/AnnaCzinege/ProgLearn-Backend)
+The ProgLearn frontend that acts as the business logic layer for the project is available at the following link: [ProgLearn-Backend](https://github.com/AnnaCzinege/ProgLearn-Backend)
 
 ## How to run
 

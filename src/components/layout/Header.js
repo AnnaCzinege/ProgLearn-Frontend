@@ -9,6 +9,8 @@ import {
   ButtonContainer,
   StyledLink,
   StyledButton,
+  // SearchBar,
+  // SearchBox,
   Container,
 } from "../elements/HeaderElements";
 import ThemeToggler from "./ThemeToggler";
